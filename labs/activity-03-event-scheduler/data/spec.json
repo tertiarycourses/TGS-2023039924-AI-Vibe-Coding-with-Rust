@@ -1,0 +1,7 @@
+{
+  "n": 3,
+  "title": "Schedule events without delay",
+  "mapping": "K1/A1 K3/A3",
+  "contract": "period must be nonzero and below 2^31 ms; next execution follows the actual observed timestamp (no backlog replay).",
+  "expected": "Six checks pass including rollover and invalid period."
+}

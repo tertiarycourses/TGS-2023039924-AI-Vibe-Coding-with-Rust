@@ -1,0 +1,7 @@
+{
+  "n": 12,
+  "title": "Build a fault-injection gate",
+  "mapping": "K4/A4",
+  "contract": "Moisture 0..100 percent; sensor_ok 0/1. Output is ON only below 30 with age<=2000 ms and sensor_ok true; all other cases OFF.",
+  "expected": "Seven assertions pass; each injected invalid/stale condition returns OFF."
+}

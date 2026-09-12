@@ -1,0 +1,427 @@
+{
+  "version": "2.0",
+  "topics": {
+    "1": {
+      "title": "Specification, C foundations and safe hardware",
+      "start": 17,
+      "end": 62,
+      "mapping": "K1/A1"
+    },
+    "2": {
+      "title": "Modular development and AI-assisted review",
+      "start": 63,
+      "end": 114,
+      "mapping": "K2/A2"
+    },
+    "3": {
+      "title": "Controls, memory and data structures",
+      "start": 116,
+      "end": 158,
+      "mapping": "K3/A3"
+    },
+    "4": {
+      "title": "Contracts, interoperability and fault evidence",
+      "start": 159,
+      "end": 201,
+      "mapping": "K4/A4"
+    },
+    "5": {
+      "title": "User-aligned documentation and bounded extension",
+      "start": 203,
+      "end": 231,
+      "mapping": "K5/A5"
+    }
+  },
+  "activities": {
+    "1": {
+      "title": "Specify and model a doorbell",
+      "folder": "activity-01-requirements-doorbell",
+      "start": 48,
+      "end": 52,
+      "topic": "1",
+      "mapping": "K1/A1"
+    },
+    "2": {
+      "title": "Validate a GPIO truth table",
+      "folder": "activity-02-gpio-truth-table",
+      "start": 53,
+      "end": 57,
+      "topic": "1",
+      "mapping": "K1/A1"
+    },
+    "3": {
+      "title": "Schedule events without delay",
+      "folder": "activity-03-event-scheduler",
+      "start": 58,
+      "end": 62,
+      "topic": "1",
+      "mapping": "K1/A1 K3/A3"
+    },
+    "4": {
+      "title": "Scale an ADC reading to PWM",
+      "folder": "activity-04-adc-pwm",
+      "start": 100,
+      "end": 104,
+      "topic": "2",
+      "mapping": "K2/A2 K3/A3"
+    },
+    "5": {
+      "title": "Review modular sensor conversion",
+      "folder": "activity-05-modular-sensor",
+      "start": 105,
+      "end": 109,
+      "topic": "2",
+      "mapping": "K2/A2"
+    },
+    "6": {
+      "title": "Repair a header and build contract",
+      "folder": "activity-06-headers-build",
+      "start": 110,
+      "end": 114,
+      "topic": "2",
+      "mapping": "K2/A2"
+    },
+    "7": {
+      "title": "Implement fan modes and hysteresis",
+      "folder": "activity-07-hysteresis-modes",
+      "start": 144,
+      "end": 148,
+      "topic": "3",
+      "mapping": "K3/A3"
+    },
+    "8": {
+      "title": "Use an array-backed ring buffer",
+      "folder": "activity-08-ringbuffer-pointers",
+      "start": 149,
+      "end": 153,
+      "topic": "3",
+      "mapping": "K3/A3"
+    },
+    "9": {
+      "title": "Encode bounded status records",
+      "folder": "activity-09-strings-bitfields",
+      "start": 154,
+      "end": 158,
+      "topic": "3",
+      "mapping": "K3/A3"
+    },
+    "10": {
+      "title": "Parse a bounded serial command",
+      "folder": "activity-10-serial-contract",
+      "start": 187,
+      "end": 191,
+      "topic": "4",
+      "mapping": "K4/A4"
+    },
+    "11": {
+      "title": "Integrate sensor display and logging",
+      "folder": "activity-11-module-integration",
+      "start": 192,
+      "end": 196,
+      "topic": "4",
+      "mapping": "K4/A4"
+    },
+    "12": {
+      "title": "Build a fault-injection gate",
+      "folder": "activity-12-fault-tests",
+      "start": 197,
+      "end": 201,
+      "topic": "4",
+      "mapping": "K4/A4"
+    },
+    "13": {
+      "title": "Document an irrigation interface",
+      "folder": "activity-13-documentation-capstone",
+      "start": 222,
+      "end": 226,
+      "topic": "5",
+      "mapping": "K5/A5"
+    },
+    "14": {
+      "title": "Bound a UNO Q local-AI suggestion",
+      "folder": "activity-14-unoq-bounded-ai",
+      "start": 227,
+      "end": 231,
+      "topic": "5",
+      "mapping": "K5/A5 K4/A4"
+    }
+  },
+  "concepts": {
+    "Specification becomes a component contract": {
+      "start": 18,
+      "end": 20,
+      "topic": "1",
+      "anchor": "MODEL"
+    },
+    "UNO Q assigns work to two processors": {
+      "start": 21,
+      "end": 23,
+      "topic": "1",
+      "anchor": "ARCH"
+    },
+    "Keep analogue inputs inside their range": {
+      "start": 24,
+      "end": 26,
+      "topic": "1",
+      "anchor": "CONFIG"
+    },
+    "C logic lives behind a C++ sketch": {
+      "start": 27,
+      "end": 29,
+      "topic": "1",
+      "anchor": "CODE"
+    },
+    "Variables encode value and unit": {
+      "start": 30,
+      "end": 32,
+      "topic": "1",
+      "anchor": "CODE"
+    },
+    "Integer arithmetic needs promotion": {
+      "start": 33,
+      "end": 35,
+      "topic": "1",
+      "anchor": "FORMULA"
+    },
+    "A function makes state visible": {
+      "start": 36,
+      "end": 38,
+      "topic": "1",
+      "anchor": "CODE"
+    },
+    "Lifetime is not the same as scope": {
+      "start": 39,
+      "end": 41,
+      "topic": "1",
+      "anchor": "CODE"
+    },
+    "Compiler output is executable evidence": {
+      "start": 42,
+      "end": 44,
+      "topic": "1",
+      "anchor": "EVIDENCE"
+    },
+    "Dynamic allocation has an explicit failure path": {
+      "start": 45,
+      "end": 47,
+      "topic": "1",
+      "anchor": "CODE"
+    },
+    "Header guards share one declaration": {
+      "start": 64,
+      "end": 66,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "AI review is bounded by evidence": {
+      "start": 67,
+      "end": 69,
+      "topic": "2",
+      "anchor": "MODEL"
+    },
+    "Separate acquisition from conversion": {
+      "start": 70,
+      "end": 72,
+      "topic": "2",
+      "anchor": "ARCH"
+    },
+    "Macros can evaluate twice": {
+      "start": 73,
+      "end": 75,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "Preprocessor choices change the build": {
+      "start": 76,
+      "end": 78,
+      "topic": "2",
+      "anchor": "CONFIG"
+    },
+    "Warnings expose narrowing mistakes": {
+      "start": 79,
+      "end": 81,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "Documentation comments state contracts": {
+      "start": 82,
+      "end": 84,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "Host files are not MCU storage APIs": {
+      "start": 85,
+      "end": 87,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "Version evidence identifies the build": {
+      "start": 88,
+      "end": 90,
+      "topic": "2",
+      "anchor": "EVIDENCE"
+    },
+    "C++ references wrap caller-owned state": {
+      "start": 91,
+      "end": 93,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "RAII ties a resource to object lifetime": {
+      "start": 94,
+      "end": 96,
+      "topic": "2",
+      "anchor": "CODE"
+    },
+    "C and C++ compile different source contracts": {
+      "start": 97,
+      "end": 99,
+      "topic": "2",
+      "anchor": "CONFIG"
+    },
+    "If-else encodes a boundary policy": {
+      "start": 117,
+      "end": 119,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Switch-case selects operating modes": {
+      "start": 120,
+      "end": 122,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "For loops walk bounded arrays": {
+      "start": 123,
+      "end": 125,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "While and do-while differ at entry": {
+      "start": 126,
+      "end": 128,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Pointers require ownership and length": {
+      "start": 129,
+      "end": 131,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Ring indexing keeps memory fixed": {
+      "start": 132,
+      "end": 134,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Strings reserve a terminator byte": {
+      "start": 135,
+      "end": 137,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Structs package values, not wire bytes": {
+      "start": 138,
+      "end": 140,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Unions and bitfields need a tag": {
+      "start": 141,
+      "end": 143,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Serial framing precedes parsing": {
+      "start": 160,
+      "end": 162,
+      "topic": "4",
+      "anchor": "ARCH"
+    },
+    "An exact parser rejects extra tokens": {
+      "start": 163,
+      "end": 165,
+      "topic": "4",
+      "anchor": "CODE"
+    },
+    "Freshness is part of interoperability": {
+      "start": 166,
+      "end": 168,
+      "topic": "4",
+      "anchor": "CODE"
+    },
+    "I2C contracts include electrical levels": {
+      "start": 169,
+      "end": 171,
+      "topic": "4",
+      "anchor": "CONFIG"
+    },
+    "SD logging needs write and readback": {
+      "start": 172,
+      "end": 174,
+      "topic": "4",
+      "anchor": "ARCH"
+    },
+    "Fault gates must fail deterministically": {
+      "start": 175,
+      "end": 177,
+      "topic": "4",
+      "anchor": "CODE"
+    },
+    "A test oracle must be independent": {
+      "start": 178,
+      "end": 180,
+      "topic": "4",
+      "anchor": "EVIDENCE"
+    },
+    "Functionality indicators are observable": {
+      "start": 181,
+      "end": 183,
+      "topic": "4",
+      "anchor": "MODEL"
+    },
+    "Bridge RPC is a value boundary": {
+      "start": 184,
+      "end": 186,
+      "topic": "4",
+      "anchor": "ARCH"
+    },
+    "Trace requirements into maintenance docs": {
+      "start": 204,
+      "end": 206,
+      "topic": "5",
+      "anchor": "MODEL"
+    },
+    "Architecture diagram is not a wiring plan": {
+      "start": 207,
+      "end": 209,
+      "topic": "5",
+      "anchor": "ARCH"
+    },
+    "Local AI proposes; deterministic C decides": {
+      "start": 210,
+      "end": 212,
+      "topic": "5",
+      "anchor": "ARCH"
+    },
+    "User documentation needs honest limits": {
+      "start": 213,
+      "end": 215,
+      "topic": "5",
+      "anchor": "EVIDENCE"
+    },
+    "Document changes preserve the contract": {
+      "start": 216,
+      "end": 218,
+      "topic": "5",
+      "anchor": "CODE"
+    },
+    "Doxygen tags document the public interface": {
+      "start": 219,
+      "end": 221,
+      "topic": "5",
+      "anchor": "CONFIG"
+    }
+  }
+}

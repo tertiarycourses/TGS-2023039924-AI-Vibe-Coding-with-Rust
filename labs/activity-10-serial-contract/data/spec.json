@@ -1,0 +1,7 @@
+{
+  "n": 10,
+  "title": "Parse a bounded serial command",
+  "mapping": "K4/A4",
+  "contract": "Input is NUL-terminated exact text, line terminator removed by transport. Parser does not accept spaces, extra tokens or unbounded commands.",
+  "expected": "Five assertions pass; invalid text preserves the previous output."
+}

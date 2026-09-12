@@ -1,0 +1,7 @@
+{
+  "n": 8,
+  "title": "Use an array-backed ring buffer",
+  "mapping": "K3/A3",
+  "contract": "Buffer capacity is 4; count 0..4; next 0..3; oldest sample overwritten. Empty mean returns 0. Samples are restricted to -1000..1000.",
+  "expected": "Six assertions pass; fifth sample overwrites 10 and mean is 35."
+}

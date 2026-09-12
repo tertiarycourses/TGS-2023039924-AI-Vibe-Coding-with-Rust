@@ -1,0 +1,7 @@
+{
+  "n": 4,
+  "title": "Scale an ADC reading to PWM",
+  "mapping": "K2/A2 K3/A3",
+  "contract": "raw is clamped to 0..adc_max; adc_max 1..65535; result rounded to nearest 0..255. Return 0 for invalid adc_max.",
+  "expected": "Seven assertions pass; midpoint 2048/4095 maps to 128."
+}

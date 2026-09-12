@@ -1,0 +1,7 @@
+{
+  "n": 14,
+  "title": "Bound a UNO Q local-AI suggestion",
+  "mapping": "K5/A5 K4/A4",
+  "contract": "Proposal value is 0/1; confidence integer 0..100, minimum 80; age<=1000 ms. Invalid suggestion returns -1 and must not reach an actuator.",
+  "expected": "Six assertions pass; all untrusted invalid or late proposals return -1."
+}
