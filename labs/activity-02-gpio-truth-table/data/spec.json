@@ -1,7 +1,0 @@
-{
-  "n": 2,
-  "title": "Validate a GPIO truth table",
-  "mapping": "K1/A1",
-  "contract": "raw_high 0 means pressed; enabled 0 always suppresses the output. Invalid levels return 0.",
-  "expected": "All four truth-table combinations and one invalid value pass."
-}

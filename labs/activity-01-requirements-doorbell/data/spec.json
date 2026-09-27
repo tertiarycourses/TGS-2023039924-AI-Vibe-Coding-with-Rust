@@ -1,7 +1,0 @@
-{
-  "n": 1,
-  "title": "Specify and model a doorbell",
-  "mapping": "K1/A1",
-  "contract": "Input pressed is 0/1; timestamp is uint32_t milliseconds. A new press restarts the 2000 ms interval; output is 0 at the deadline.",
-  "expected": "Five assertions pass; activation is 1 before the deadline and 0 at it."
-}

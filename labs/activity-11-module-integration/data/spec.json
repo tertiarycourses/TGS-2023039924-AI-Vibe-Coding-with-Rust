@@ -1,7 +1,0 @@
-{
-  "n": 11,
-  "title": "Integrate sensor display and logging",
-  "mapping": "K4/A4",
-  "contract": "Sample temperature is tenths of degree, humidity percent 0..100, timestamp ms. Valid temperature -400..1250; stale after 5000 ms.",
-  "expected": "Seven assertions pass; 5000 ms valid, 5001 ms stale; 2500 and humidity 101 rejected."
-}

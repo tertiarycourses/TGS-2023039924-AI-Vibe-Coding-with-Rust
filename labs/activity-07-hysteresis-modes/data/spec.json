@@ -1,7 +1,0 @@
-{
-  "n": 7,
-  "title": "Implement fan modes and hysteresis",
-  "mapping": "K3/A3",
-  "contract": "Temperature uses tenths of degree; AUTO on at >=300, off at <=280, retained state between. Unknown mode fails OFF.",
-  "expected": "Seven assertions prove threshold boundaries, retention and unknown-mode OFF."
-}

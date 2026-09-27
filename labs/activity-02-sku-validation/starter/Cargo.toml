@@ -1,0 +1,8 @@
+[package]
+name = "activity02"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 2: Validate a product code with strings"
+
+[dependencies]

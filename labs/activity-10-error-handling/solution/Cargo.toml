@@ -1,0 +1,8 @@
+[package]
+name = "activity10"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 10: Parse CSV records with Result and custom errors"
+
+[dependencies]

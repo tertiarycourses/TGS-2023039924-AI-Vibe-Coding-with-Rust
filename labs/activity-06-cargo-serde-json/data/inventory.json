@@ -1,0 +1,5 @@
+[
+  {"sku": "ABC-0001", "name": "USB-C cable", "qty": 40, "unit_cents": 899},
+  {"sku": "ABC-0002", "name": "Wall charger", "qty": 12, "unit_cents": 2499},
+  {"sku": "ABC-0003", "name": "Phone case", "qty": 0, "unit_cents": 1299}
+]

@@ -1,0 +1,8 @@
+[package]
+name = "activity03"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 3: Share inventory records with ownership and borrowing"
+
+[dependencies]

@@ -1,427 +1,386 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "topics": {
     "1": {
-      "title": "Specification, C foundations and safe hardware",
-      "start": 17,
-      "end": 62,
+      "title": "Rust Programming Fundamentals and Software Components",
+      "start": 16,
+      "end": 55,
       "mapping": "K1/A1"
     },
     "2": {
-      "title": "Modular development and AI-assisted review",
-      "start": 63,
-      "end": 114,
+      "title": "AI Vibe Coding for Rust Application Development",
+      "start": 56,
+      "end": 95,
       "mapping": "K2/A2"
     },
     "3": {
-      "title": "Controls, memory and data structures",
-      "start": 116,
-      "end": 158,
+      "title": "Rust Programming Controls, Functions and Features",
+      "start": 96,
+      "end": 136,
       "mapping": "K3/A3"
     },
     "4": {
-      "title": "Contracts, interoperability and fault evidence",
-      "start": 159,
-      "end": 201,
+      "title": "Testing, Debugging and Integrating Rust Components",
+      "start": 137,
+      "end": 174,
       "mapping": "K4/A4"
     },
     "5": {
-      "title": "User-aligned documentation and bounded extension",
-      "start": 203,
-      "end": 231,
+      "title": "AI-Assisted Rust Software Design and Documentation",
+      "start": 175,
+      "end": 207,
       "mapping": "K5/A5"
     }
   },
   "activities": {
     "1": {
-      "title": "Specify and model a doorbell",
-      "folder": "activity-01-requirements-doorbell",
-      "start": 48,
-      "end": 52,
+      "title": "Turn a specification into a Rust function",
+      "folder": "activity-01-line-total",
+      "start": 41,
+      "end": 45,
       "topic": "1",
       "mapping": "K1/A1"
     },
     "2": {
-      "title": "Validate a GPIO truth table",
-      "folder": "activity-02-gpio-truth-table",
-      "start": 53,
-      "end": 57,
+      "title": "Validate a product code with strings",
+      "folder": "activity-02-sku-validation",
+      "start": 46,
+      "end": 50,
       "topic": "1",
       "mapping": "K1/A1"
     },
     "3": {
-      "title": "Schedule events without delay",
-      "folder": "activity-03-event-scheduler",
-      "start": 58,
-      "end": 62,
+      "title": "Share inventory records with ownership and borrowing",
+      "folder": "activity-03-ownership-borrowing",
+      "start": 51,
+      "end": 55,
       "topic": "1",
       "mapping": "K1/A1 K3/A3"
     },
     "4": {
-      "title": "Scale an ADC reading to PWM",
-      "folder": "activity-04-adc-pwm",
-      "start": 100,
-      "end": 104,
+      "title": "Vibe-code a command parser",
+      "folder": "activity-04-cli-commands",
+      "start": 81,
+      "end": 85,
       "topic": "2",
-      "mapping": "K2/A2 K3/A3"
+      "mapping": "K2/A2"
     },
     "5": {
-      "title": "Review modular sensor conversion",
-      "folder": "activity-05-modular-sensor",
-      "start": 105,
-      "end": 109,
+      "title": "Organise a crate into modules",
+      "folder": "activity-05-modules-visibility",
+      "start": 86,
+      "end": 90,
       "topic": "2",
       "mapping": "K2/A2"
     },
     "6": {
-      "title": "Repair a header and build contract",
-      "folder": "activity-06-headers-build",
-      "start": 110,
-      "end": 114,
+      "title": "Load inventory JSON with Cargo dependencies",
+      "folder": "activity-06-cargo-serde-json",
+      "start": 91,
+      "end": 95,
       "topic": "2",
-      "mapping": "K2/A2"
+      "mapping": "K2/A2 K4/A4"
     },
     "7": {
-      "title": "Implement fan modes and hysteresis",
-      "folder": "activity-07-hysteresis-modes",
-      "start": 144,
-      "end": 148,
+      "title": "Apply stock movements with enums and match",
+      "folder": "activity-07-match-control-flow",
+      "start": 121,
+      "end": 125,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "8": {
-      "title": "Use an array-backed ring buffer",
-      "folder": "activity-08-ringbuffer-pointers",
-      "start": 149,
-      "end": 153,
+      "title": "Track stock in a HashMap",
+      "folder": "activity-08-hashmap-inventory",
+      "start": 126,
+      "end": 130,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "9": {
-      "title": "Encode bounded status records",
-      "folder": "activity-09-strings-bitfields",
-      "start": 154,
-      "end": 158,
+      "title": "Price mixed order lines with traits and iterators",
+      "folder": "activity-09-traits-iterators",
+      "start": 131,
+      "end": 135,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "10": {
-      "title": "Parse a bounded serial command",
-      "folder": "activity-10-serial-contract",
-      "start": 187,
-      "end": 191,
+      "title": "Parse CSV records with Result and custom errors",
+      "folder": "activity-10-error-handling",
+      "start": 159,
+      "end": 163,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "11": {
-      "title": "Integrate sensor display and logging",
-      "folder": "activity-11-module-integration",
-      "start": 192,
-      "end": 196,
+      "title": "Debug a failing integration with tests",
+      "folder": "activity-11-debug-integration",
+      "start": 164,
+      "end": 168,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "12": {
-      "title": "Build a fault-injection gate",
-      "folder": "activity-12-fault-tests",
-      "start": 197,
-      "end": 201,
+      "title": "Integrate components into a tested command-line tool",
+      "folder": "activity-12-cli-integration",
+      "start": 169,
+      "end": 173,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "13": {
-      "title": "Document an irrigation interface",
-      "folder": "activity-13-documentation-capstone",
-      "start": 222,
-      "end": 226,
+      "title": "Document an API with rustdoc and doctests",
+      "folder": "activity-13-rustdoc-doctests",
+      "start": 197,
+      "end": 201,
       "topic": "5",
       "mapping": "K5/A5"
     },
     "14": {
-      "title": "Bound a UNO Q local-AI suggestion",
-      "folder": "activity-14-unoq-bounded-ai",
-      "start": 227,
-      "end": 231,
+      "title": "Design and document a reorder feature with AI",
+      "folder": "activity-14-design-capstone",
+      "start": 202,
+      "end": 206,
       "topic": "5",
       "mapping": "K5/A5 K4/A4"
     }
   },
   "concepts": {
-    "Specification becomes a component contract": {
-      "start": 18,
-      "end": 20,
+    "A specification becomes a component contract": {
+      "start": 17,
+      "end": 19,
       "topic": "1",
       "anchor": "MODEL"
     },
-    "UNO Q assigns work to two processors": {
-      "start": 21,
-      "end": 23,
-      "topic": "1",
-      "anchor": "ARCH"
-    },
-    "Keep analogue inputs inside their range": {
-      "start": 24,
-      "end": 26,
+    "The Rust toolchain: rustup, cargo and rustc": {
+      "start": 20,
+      "end": 22,
       "topic": "1",
       "anchor": "CONFIG"
     },
-    "C logic lives behind a C++ sketch": {
-      "start": 27,
-      "end": 29,
+    "Anatomy of a Cargo package": {
+      "start": 23,
+      "end": 25,
+      "topic": "1",
+      "anchor": "ARCH"
+    },
+    "Variables are immutable by default": {
+      "start": 26,
+      "end": 28,
       "topic": "1",
       "anchor": "CODE"
     },
-    "Variables encode value and unit": {
-      "start": 30,
-      "end": 32,
-      "topic": "1",
-      "anchor": "CODE"
-    },
-    "Integer arithmetic needs promotion": {
-      "start": 33,
-      "end": 35,
+    "Choose integer types deliberately": {
+      "start": 29,
+      "end": 31,
       "topic": "1",
       "anchor": "FORMULA"
     },
-    "A function makes state visible": {
-      "start": 36,
-      "end": 38,
+    "Functions: the signature is the contract": {
+      "start": 32,
+      "end": 34,
       "topic": "1",
       "anchor": "CODE"
     },
-    "Lifetime is not the same as scope": {
-      "start": 39,
-      "end": 41,
+    "String and &str: owned text and borrowed text": {
+      "start": 35,
+      "end": 37,
       "topic": "1",
       "anchor": "CODE"
     },
-    "Compiler output is executable evidence": {
-      "start": 42,
-      "end": 44,
-      "topic": "1",
-      "anchor": "EVIDENCE"
-    },
-    "Dynamic allocation has an explicit failure path": {
-      "start": 45,
-      "end": 47,
+    "Ownership moves; borrowing lends": {
+      "start": 38,
+      "end": 40,
       "topic": "1",
       "anchor": "CODE"
     },
-    "Header guards share one declaration": {
-      "start": 64,
-      "end": 66,
-      "topic": "2",
-      "anchor": "CODE"
-    },
-    "AI review is bounded by evidence": {
-      "start": 67,
-      "end": 69,
+    "The vibe-coding loop for Rust": {
+      "start": 57,
+      "end": 59,
       "topic": "2",
       "anchor": "MODEL"
     },
-    "Separate acquisition from conversion": {
-      "start": 70,
-      "end": 72,
-      "topic": "2",
-      "anchor": "ARCH"
-    },
-    "Macros can evaluate twice": {
-      "start": 73,
-      "end": 75,
-      "topic": "2",
-      "anchor": "CODE"
-    },
-    "Preprocessor choices change the build": {
-      "start": 76,
-      "end": 78,
+    "Write a bounded prompt": {
+      "start": 60,
+      "end": 62,
       "topic": "2",
       "anchor": "CONFIG"
     },
-    "Warnings expose narrowing mistakes": {
-      "start": 79,
-      "end": 81,
-      "topic": "2",
-      "anchor": "CODE"
-    },
-    "Documentation comments state contracts": {
-      "start": 82,
-      "end": 84,
-      "topic": "2",
-      "anchor": "CODE"
-    },
-    "Host files are not MCU storage APIs": {
-      "start": 85,
-      "end": 87,
-      "topic": "2",
-      "anchor": "CODE"
-    },
-    "Version evidence identifies the build": {
-      "start": 88,
-      "end": 90,
+    "The compiler is your first reviewer": {
+      "start": 63,
+      "end": 65,
       "topic": "2",
       "anchor": "EVIDENCE"
     },
-    "C++ references wrap caller-owned state": {
-      "start": 91,
-      "end": 93,
+    "Review AI-generated Rust before accepting it": {
+      "start": 66,
+      "end": 68,
       "topic": "2",
-      "anchor": "CODE"
+      "anchor": "EVIDENCE"
     },
-    "RAII ties a resource to object lifetime": {
-      "start": 94,
-      "end": 96,
+    "Modules and visibility organise a crate": {
+      "start": 69,
+      "end": 71,
       "topic": "2",
-      "anchor": "CODE"
+      "anchor": "ARCH"
     },
-    "C and C++ compile different source contracts": {
+    "Cargo dependencies and Cargo.lock": {
+      "start": 72,
+      "end": 74,
+      "topic": "2",
+      "anchor": "CONFIG"
+    },
+    "fmt and clippy encode team practice": {
+      "start": 75,
+      "end": 77,
+      "topic": "2",
+      "anchor": "CONFIG"
+    },
+    "Set up VS Code for Rust vibe coding": {
+      "start": 78,
+      "end": 80,
+      "topic": "2",
+      "anchor": "UI"
+    },
+    "if and match are expressions": {
       "start": 97,
       "end": 99,
-      "topic": "2",
-      "anchor": "CONFIG"
-    },
-    "If-else encodes a boundary policy": {
-      "start": 117,
-      "end": 119,
       "topic": "3",
       "anchor": "CODE"
     },
-    "Switch-case selects operating modes": {
-      "start": 120,
-      "end": 122,
+    "enum + match model every case": {
+      "start": 100,
+      "end": 102,
       "topic": "3",
       "anchor": "CODE"
     },
-    "For loops walk bounded arrays": {
-      "start": 123,
-      "end": 125,
+    "Loops: for, while and loop": {
+      "start": 103,
+      "end": 105,
       "topic": "3",
       "anchor": "CODE"
     },
-    "While and do-while differ at entry": {
-      "start": 126,
-      "end": 128,
+    "Structs and impl blocks": {
+      "start": 106,
+      "end": 108,
       "topic": "3",
       "anchor": "CODE"
     },
-    "Pointers require ownership and length": {
-      "start": 129,
-      "end": 131,
+    "Collections: Vec and HashMap": {
+      "start": 109,
+      "end": 111,
       "topic": "3",
       "anchor": "CODE"
     },
-    "Ring indexing keeps memory fixed": {
-      "start": 132,
-      "end": 134,
+    "Traits and generics share behaviour": {
+      "start": 112,
+      "end": 114,
       "topic": "3",
       "anchor": "CODE"
     },
-    "Strings reserve a terminator byte": {
-      "start": 135,
-      "end": 137,
+    "Closures and iterator chains": {
+      "start": 115,
+      "end": 117,
       "topic": "3",
       "anchor": "CODE"
     },
-    "Structs package values, not wire bytes": {
+    "Option and Result are control features": {
+      "start": 118,
+      "end": 120,
+      "topic": "3",
+      "anchor": "CODE"
+    },
+    "Unit tests live beside the code": {
       "start": 138,
       "end": 140,
-      "topic": "3",
+      "topic": "4",
       "anchor": "CODE"
     },
-    "Unions and bitfields need a tag": {
+    "Integration tests check components together": {
       "start": 141,
       "end": 143,
-      "topic": "3",
-      "anchor": "CODE"
-    },
-    "Serial framing precedes parsing": {
-      "start": 160,
-      "end": 162,
       "topic": "4",
       "anchor": "ARCH"
     },
-    "An exact parser rejects extra tokens": {
-      "start": 163,
-      "end": 165,
+    "Custom errors and the ? operator": {
+      "start": 144,
+      "end": 146,
       "topic": "4",
       "anchor": "CODE"
     },
-    "Freshness is part of interoperability": {
-      "start": 166,
-      "end": 168,
-      "topic": "4",
-      "anchor": "CODE"
-    },
-    "I2C contracts include electrical levels": {
-      "start": 169,
-      "end": 171,
-      "topic": "4",
-      "anchor": "CONFIG"
-    },
-    "SD logging needs write and readback": {
-      "start": 172,
-      "end": 174,
-      "topic": "4",
-      "anchor": "ARCH"
-    },
-    "Fault gates must fail deterministically": {
-      "start": 175,
-      "end": 177,
-      "topic": "4",
-      "anchor": "CODE"
-    },
-    "A test oracle must be independent": {
-      "start": 178,
-      "end": 180,
+    "Read a failing test like a detective": {
+      "start": 147,
+      "end": 149,
       "topic": "4",
       "anchor": "EVIDENCE"
     },
-    "Functionality indicators are observable": {
-      "start": 181,
-      "end": 183,
+    "Debug with dbg!, focused tests and AI": {
+      "start": 150,
+      "end": 152,
       "topic": "4",
-      "anchor": "MODEL"
-    },
-    "Bridge RPC is a value boundary": {
-      "start": 184,
-      "end": 186,
-      "topic": "4",
-      "anchor": "ARCH"
-    },
-    "Trace requirements into maintenance docs": {
-      "start": 204,
-      "end": 206,
-      "topic": "5",
-      "anchor": "MODEL"
-    },
-    "Architecture diagram is not a wiring plan": {
-      "start": 207,
-      "end": 209,
-      "topic": "5",
-      "anchor": "ARCH"
-    },
-    "Local AI proposes; deterministic C decides": {
-      "start": 210,
-      "end": 212,
-      "topic": "5",
-      "anchor": "ARCH"
-    },
-    "User documentation needs honest limits": {
-      "start": 213,
-      "end": 215,
-      "topic": "5",
       "anchor": "EVIDENCE"
     },
-    "Document changes preserve the contract": {
-      "start": 216,
-      "end": 218,
+    "Interoperability: arguments, files, exit codes": {
+      "start": 153,
+      "end": 155,
+      "topic": "4",
+      "anchor": "ARCH"
+    },
+    "Serde: typed data at the boundary": {
+      "start": 156,
+      "end": 158,
+      "topic": "4",
+      "anchor": "CODE"
+    },
+    "Doc comments become documentation": {
+      "start": 176,
+      "end": 178,
       "topic": "5",
       "anchor": "CODE"
     },
-    "Doxygen tags document the public interface": {
-      "start": 219,
-      "end": 221,
+    "Doctests keep examples honest": {
+      "start": 179,
+      "end": 181,
       "topic": "5",
-      "anchor": "CONFIG"
+      "anchor": "EVIDENCE"
+    },
+    "Trace requirements to code and tests": {
+      "start": 182,
+      "end": 184,
+      "topic": "5",
+      "anchor": "MODEL"
+    },
+    "Architecture and module maps": {
+      "start": 185,
+      "end": 187,
+      "topic": "5",
+      "anchor": "ARCH"
+    },
+    "Record design decisions": {
+      "start": 188,
+      "end": 190,
+      "topic": "5",
+      "anchor": "MODEL"
+    },
+    "AI-assisted documentation, human-verified": {
+      "start": 191,
+      "end": 193,
+      "topic": "5",
+      "anchor": "EVIDENCE"
+    },
+    "Hand over: README and maintenance notes": {
+      "start": 194,
+      "end": 196,
+      "topic": "5",
+      "anchor": "UI"
     }
+  },
+  "admin": {
+    "portal": [
+      13,
+      210
+    ],
+    "practice_exam": 209
   }
 }

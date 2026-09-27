@@ -1,71 +1,92 @@
-# AI-Assisted C Programming for Arduino
+# AI Vibe Coding with Rust
 
-Develop and review embedded C logic, connect it to Arduino C++ sketches, and validate AI-assisted changes with explicit contracts and tests.
-
-[View course details and register](https://www.tertiarycourses.com.sg/wsq-ai-assisted-c-programming-for-arduino.html)
+Build reliable Rust applications with an AI coding assistant, using the compiler, tests, clippy and rustfmt as the gate for every AI-generated change.
 
 | Course detail | Information |
 |---|---|
-| Course code | TGS-2023039924 |
+| Course code | `TGS-2023039924` |
 | Programme | WSQ |
-| Duration | 2 days, 16 hours: 14 training hours and 2 assessment hours |
-| TSC | Software Design — ICT-DES-3005-1.1 |
-| Courseware | Version 2.0 |
-| Funding | Up to 70% for eligible learners. Eligibility and current SSG/provider terms apply. |
+| Duration | 2 days, 16 hours (14 training hours + 2 assessment hours), 9:30 AM - 6:30 PM |
+| Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-ai-vibe-coding-with-rust.html) |
+| Skills framework | Software Design, ICT-DES-3005-1.1 |
+| Funding | Up to 70% SkillsFuture funding for eligible learners. Eligibility and terms apply. |
+| Courseware | Version 3.0 |
 
 ## About the course
 
-This course combines C foundations, modular software design, controls, interoperability testing and user-aligned documentation. Arduino UNO Q examples distinguish its Linux application side from deterministic microcontroller logic. Vibe-coding prompts ask for small, reviewable changes; human decisions and independent tests remain essential.
+This WSQ course teaches practical Rust programming together with AI-assisted "vibe coding". You turn functional requirements into Rust components through natural-language prompts, then prove every AI draft with the compiler, unit and integration tests, clippy and rustfmt before accepting it.
+
+All 14 activities build parts of **StockPilot**, a stock service for a small electronics retailer: order pricing, product-code validation, inventory records, command parsing, JSON data, error handling, debugging, a command-line tool, and documented reorder planning.
 
 ## Learning outcomes
 
-- Determine software components from functional and business specifications.
-- Apply software design methodologies and tools in line with organisational practices.
-- Select controls, elements and features to meet design objectives.
-- Examine component functionality and interoperability.
-- Produce detailed design documentation mapped to user specifications.
+- LO1: Determine basic software components using programming methodologies to meet functional specifications.
+- LO2: Apply programming methodologies and tools for software creation.
+- LO3: Select essential programming controls and features to meet software design requirements.
+- LO4: Examine the interoperability and functionality of programming components.
+- LO5: Generate programming design documentation aligned with user specifications.
 
 ## Topics covered
 
-- Specifications, C types, functions, compilation and safe GPIO.
-- Modular C/C++ boundaries, headers, AI-assisted development and review.
-- Control flow, timing, hysteresis, arrays, pointers and bounded strings.
-- Transport contracts, integrated records, validation and fault evidence.
-- Requirement traceability, maintenance documentation and bounded UNO Q AI proposals.
+1. Rust Programming Fundamentals and Software Components
+2. AI Vibe Coding for Rust Application Development
+3. Rust Programming Controls, Functions and Features
+4. Testing, Debugging and Integrating Rust Components
+5. AI-Assisted Rust Software Design and Documentation
 
 ## Activities
 
-Each folder is self-contained and includes C starter/reference sources, an Arduino C++ adapter, mock data, test scripts, review/evidence templates, prompt text and a **Vibe-Coding-Prompts.pdf**. The `labs/` directory is retained for tool compatibility; all learner-facing work is named Activity.
+Each activity folder contains a `starter/` crate to complete, a `solution/` crate for comparison, data files, the vibe-coding prompts (`PROMPTS.md` and `Vibe-Coding-Prompts.pdf`) and review/verification record templates. Start with the [activities index](labs/README.md).
 
-- [Activity 1: Specify and model a doorbell](labs/activity-01-requirements-doorbell/)
-- [Activity 2: Validate a GPIO truth table](labs/activity-02-gpio-truth-table/)
-- [Activity 3: Schedule events without delay](labs/activity-03-event-scheduler/)
-- [Activity 4: Scale an ADC reading to PWM](labs/activity-04-adc-pwm/)
-- [Activity 5: Review modular sensor conversion](labs/activity-05-modular-sensor/)
-- [Activity 6: Repair a header and build contract](labs/activity-06-headers-build/)
-- [Activity 7: Implement fan modes and hysteresis](labs/activity-07-hysteresis-modes/)
-- [Activity 8: Use an array-backed ring buffer](labs/activity-08-ringbuffer-pointers/)
-- [Activity 9: Encode bounded status records](labs/activity-09-strings-bitfields/)
-- [Activity 10: Parse a bounded serial command](labs/activity-10-serial-contract/)
-- [Activity 11: Integrate sensor display and logging](labs/activity-11-module-integration/)
-- [Activity 12: Build a fault-injection gate](labs/activity-12-fault-tests/)
-- [Activity 13: Document an irrigation interface](labs/activity-13-documentation-capstone/)
-- [Activity 14: Bound a UNO Q local-AI suggestion](labs/activity-14-unoq-bounded-ai/)
+| # | Activity | Maps to |
+|---|---|---|
+| 1 | [Turn a specification into a Rust function](labs/activity-01-line-total/) | K1/A1 |
+| 2 | [Validate a product code with strings](labs/activity-02-sku-validation/) | K1/A1 |
+| 3 | [Share inventory records with ownership and borrowing](labs/activity-03-ownership-borrowing/) | K1/A1 K3/A3 |
+| 4 | [Vibe-code a command parser](labs/activity-04-cli-commands/) | K2/A2 |
+| 5 | [Organise a crate into modules](labs/activity-05-modules-visibility/) | K2/A2 |
+| 6 | [Load inventory JSON with Cargo dependencies](labs/activity-06-cargo-serde-json/) | K2/A2 K4/A4 |
+| 7 | [Apply stock movements with enums and match](labs/activity-07-match-control-flow/) | K3/A3 |
+| 8 | [Track stock in a HashMap](labs/activity-08-hashmap-inventory/) | K3/A3 |
+| 9 | [Price mixed order lines with traits and iterators](labs/activity-09-traits-iterators/) | K3/A3 |
+| 10 | [Parse CSV records with Result and custom errors](labs/activity-10-error-handling/) | K4/A4 |
+| 11 | [Debug a failing integration with tests](labs/activity-11-debug-integration/) | K4/A4 |
+| 12 | [Integrate components into a tested command-line tool](labs/activity-12-cli-integration/) | K4/A4 |
+| 13 | [Document an API with rustdoc and doctests](labs/activity-13-rustdoc-doctests/) | K5/A5 |
+| 14 | [Design and document a reorder feature with AI](labs/activity-14-design-capstone/) | K5/A5 K4/A4 |
 
-## Public package and usage
+Every solution crate passes `cargo test` (including doctests), `cargo clippy --all-targets -- -D warnings` and `cargo fmt --check` on Rust 1.93.1. Every starter compiles and fails in the intended way until you complete it.
 
-[Editable slide deck](courseware/AI-Assisted-C-Programming-for-Arduino-v2.0.pptx) · [Slide PDF](courseware/AI-Assisted-C-Programming-for-Arduino-v2.0.pdf) · [Learner Guide PDF](courseware/LG-AI-Assisted-C-Programming-for-Arduino-v2.0.pdf) · [Learner Guide Markdown](LG-AI-Assisted-C-Programming-for-Arduino-v2.0.md)
+## Getting started
 
-Detailed setup, execution steps, expected results and troubleshooting are in the Learner Guide and activity READMEs. A host C compiler is sufficient for the mock logic tests; UNO Q target work requires the supported Arduino Zephyr board core and RouterBridge library. No paid AI API account is required for the supplied activities.
+```sh
+# 1. Install Rust (Windows: run rustup-init.exe from https://rustup.rs)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add clippy rustfmt
 
-UNO Q peripherals in this package use 3.3 V-safe signalling. `.c` modules contain C logic; `.ino` adapters compile as C++. A host test or successful target compilation does not prove upload, physical timing, sensor calibration, LCD/SD operation or actuator safety. Record physical checks as NOT RUN until observed. Use LEDs as actuator surrogates; never connect a pump or motor directly to a GPIO or let model text execute arbitrary commands.
+# 2. Get the activities and check the toolchain
+git clone https://github.com/tertiarycourses/TGS-2023039924-AI-Vibe-Coding-with-Rust.git
+cd TGS-2023039924-AI-Vibe-Coding-with-Rust/labs/activity-01-line-total/solution
+cargo test
+```
+
+Use Visual Studio Code with the rust-analyzer extension and any AI coding assistant. No API key or paid account is needed. Detailed step-by-step instructions for every activity are in the Learner Guide and each activity README.
+
+## Courseware package
+
+| Item | Files |
+|---|---|
+| Slide deck | [PowerPoint](courseware/AI-Vibe-Coding-with-Rust-v3.0.pptx) · [PDF](courseware/AI-Vibe-Coding-with-Rust-v3.0.pdf) |
+| Learner Guide | [Word](courseware/LG-AI-Vibe-Coding-with-Rust-v3.0.docx) · [PDF](courseware/LG-AI-Vibe-Coding-with-Rust-v3.0.pdf) · [Markdown](LG-AI-Vibe-Coding-with-Rust-v3.0.md) |
+| Lesson Plan | [Word](courseware/LP-AI-Vibe-Coding-with-Rust-v3.0.docx) · [PDF](courseware/LP-AI-Vibe-Coding-with-Rust-v3.0.pdf) |
+| Activities | [labs/](labs/) |
 
 ## Distribution boundary
 
-This repository contains learner-facing teaching material and activity solutions, not confidential assessment solutions. Assessment papers, answer keys, the trainer Lesson Plan, source/reference material, credentials, private build tooling, archives and QA renders are excluded from GitHub. Assessments are issued through the course LMS; answer keys remain restricted to trainer administration on Drive.
+This repository contains learner-facing teaching material: slides, Learner Guide, Lesson Plan and the activity crates with their solutions. Assessment papers, answer keys, reference sources, the assessment generator, credentials and archived versions are not published here. Assessment question papers are issued through the course LMS; answer keys remain restricted to trainers.
 
-## Sources and acknowledgements
+## Sources
 
-See [Sources](SOURCES.md) for the Arduino UNO Q and C++ references. Board illustrations are attributed to Arduino. AI-generated conceptual imagery is labelled as illustrative, not a pinout or measured project.
+See [Sources](SOURCES.md) for the official Rust documentation used by this course.
 
-Developed by **Tertiary Infotech Academy Pte Ltd**. [Course registration](https://www.tertiarycourses.com.sg/wsq-ai-assisted-c-programming-for-arduino.html).
+Developed by **Tertiary Infotech Academy Pte Ltd** (UEN 201200696W). [Course registration](https://www.tertiarycourses.com.sg/wsq-ai-vibe-coding-with-rust.html)

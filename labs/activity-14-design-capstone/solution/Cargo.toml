@@ -1,0 +1,8 @@
+[package]
+name = "activity14"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 14: Design and document a reorder feature with AI"
+
+[dependencies]

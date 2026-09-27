@@ -1,0 +1,8 @@
+[package]
+name = "activity12"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 12: Integrate components into a tested command-line tool"
+
+[dependencies]

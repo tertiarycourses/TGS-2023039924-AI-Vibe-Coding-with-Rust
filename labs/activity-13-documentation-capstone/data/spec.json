@@ -1,7 +1,0 @@
-{
-  "n": 13,
-  "title": "Document an irrigation interface",
-  "mapping": "K5/A5",
-  "contract": "Named requirement IDs R1/R2/R3 map to dry/wet/fault evidence. safe_request requires enabled and valid moisture; no hardware claims in documentation.",
-  "expected": "Five assertions pass; documentation contains R1/R2/R3 trace rows and NOT RUN board fields until measured."
-}

@@ -1,7 +1,0 @@
-{
-  "n": 6,
-  "title": "Repair a header and build contract",
-  "mapping": "K2/A2",
-  "contract": "alarm() accepts signed whole-degree temperature and limit; equality is alarm-on. No hidden global threshold.",
-  "expected": "Four assertions and duplicate-header inclusion compile successfully."
-}

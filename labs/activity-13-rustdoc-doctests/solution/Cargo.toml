@@ -1,0 +1,8 @@
+[package]
+name = "activity13"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "StockPilot - Activity 13: Document an API with rustdoc and doctests"
+
+[dependencies]

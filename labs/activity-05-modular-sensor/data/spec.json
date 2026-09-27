@@ -1,7 +1,0 @@
-{
-  "n": 5,
-  "title": "Review modular sensor conversion",
-  "mapping": "K2/A2",
-  "contract": "Maximum 1..65535; clamped raw input; rounded integer percentage 0..100. No Serial, GPIO or allocation in this module.",
-  "expected": "Five assertions pass; invalid denominator returns -1."
-}

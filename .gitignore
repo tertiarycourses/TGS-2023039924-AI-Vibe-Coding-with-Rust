@@ -2,11 +2,10 @@
 .env.*
 **/.env
 **/.env.*
+# .claude/ and build/ hold the assessment generator (model answers) and assessment QA renders: private
 .claude/
 .codex/
 /assessment/
-/courseware/LP-*
-/courseware/anchor_inventory.json
 /assesment/
 /reference/
 /build/
@@ -24,3 +23,6 @@
 credentials.json
 secrets.json
 node_modules/
+
+# Rust build output
+**/target/
