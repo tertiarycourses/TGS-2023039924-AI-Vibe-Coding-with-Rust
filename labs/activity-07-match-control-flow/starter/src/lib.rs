@@ -30,7 +30,7 @@ pub enum StockError {
 
 /// Applies one movement and returns the new stock level.
 pub fn apply(stock: u32, movement: Movement) -> Result<u32, StockError> {
-    todo!("implement apply (see README step 6)")
+    todo!("implement apply (see README, step 7)")
 }
 
 /// Applies movements in order and stops at the first error.
@@ -38,5 +38,5 @@ pub fn apply_all(
     stock: u32,
     movements: &[Movement],
 ) -> Result<u32, StockError> {
-    todo!("implement apply_all (see README step 6)")
+    todo!("implement apply_all (see README, step 7)")
 }

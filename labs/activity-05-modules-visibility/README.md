@@ -1,6 +1,6 @@
 # Activity 5: Organise a crate into modules
 
-AI Vibe Coding with Rust (TGS-2023039924) - version 3.0 - K2/A2 - about 25 minutes.
+AI Vibe Coding with Rust (TGS-2023039924) - version 3.1 - K2/A2 - about 25 minutes.
 
 ## Goal and scenario
 
@@ -20,21 +20,48 @@ Rust stable installed with rustup (includes cargo, rustfmt and clippy), Visual S
 |---|---|
 | `starter/` | The crate you complete. Start here. |
 | `solution/` | Reference crate: runs green; compare only after your own attempt. |
-| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | The three vibe-coding prompts for this activity. |
+| `samples/` | Small runnable Rust sample scripts that teach the concepts of this activity. |
+| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | Learn Rust prompts, vibe-coding prompts, samples and learn-more links. |
 | `docs/` | Review and verification records you complete. |
 
 ## Step-by-step
 
 1. **Read the specification.** Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 2. **Open the activity in VS Code.** Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
-3. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 4 passed; tests import activity05::money and activity05::report.)
-4. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
-5. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
-6. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs, starter/src/money.rs, starter/src/report.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
-7. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
-8. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
-9. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Move format_cents behind pub(crate) and explain which test import then fails to compile.
-10. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+3. **Learn the concept first.** Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain modules, pub visibility, paths with crate::, self:: and super::, and use ... as. The Learn more links point to the matching Rust Book and tutorial pages.
+4. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 4 passed; tests import activity05::money and activity05::report.)
+5. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+6. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+7. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs, starter/src/money.rs, starter/src/report.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+8. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+9. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+10. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Move format_cents behind pub(crate) and explain which test import then fails to compile.
+11. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+
+## Learn the concepts
+
+This activity uses modules, pub visibility, paths with crate::, self:: and super::, and use ... as. Run the samples, then ask your AI assistant the Learn Rust prompts below.
+
+| Sample | Run it | Expected output |
+|---|---|---|
+| [`01_inline_modules.rs`](samples/01_inline_modules.rs) | `rustc --edition 2021 01_inline_modules.rs && ./01_inline_modules` | Cable x3 @ $2.50 = $7.50<br>private: only code inside `money` can call this |
+| [`02_nested_paths.rs`](samples/02_nested_paths.rs) | `rustc --edition 2021 02_nested_paths.rs && ./02_nested_paths` | stock count = 12<br>via use-as: 12 |
+
+### Learn Rust prompts
+
+**Explain it simply.** I am learning Rust. Explain modules, pub visibility, paths with crate::, self:: and super::, and use ... as to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+**Walk me through the sample.** Here is samples/01_inline_modules.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+**Quiz me.** Quiz me on modules, pub visibility, paths with crate::, self:: and super::, and use ... as with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+**Compare with what I know.** I know some Python or JavaScript. In a small table, compare how Rust handles modules and code organisation with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+### Learn more
+
+- [Rust Book: Defining Modules to Control Scope and Privacy](https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html)
+- [Programiz: Cargo (packages and crates)](https://www.programiz.com/rust/cargo)
+
 
 ## Commands
 

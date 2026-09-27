@@ -24,5 +24,5 @@ pub enum Command {
 
 /// Parses command-line words into a [`Command`].
 pub fn parse_command(args: &[&str]) -> Result<Command, String> {
-    todo!("implement parse_command (see README step 6)")
+    todo!("implement parse_command (see README, step 7)")
 }

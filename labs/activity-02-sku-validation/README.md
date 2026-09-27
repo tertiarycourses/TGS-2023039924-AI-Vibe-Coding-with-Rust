@@ -1,6 +1,6 @@
 # Activity 2: Validate a product code with strings
 
-AI Vibe Coding with Rust (TGS-2023039924) - version 3.0 - K1/A1 - about 25 minutes.
+AI Vibe Coding with Rust (TGS-2023039924) - version 3.1 - K1/A1 - about 25 minutes.
 
 ## Goal and scenario
 
@@ -20,21 +20,49 @@ Rust stable installed with rustup (includes cargo, rustfmt and clippy), Visual S
 |---|---|
 | `starter/` | The crate you complete. Start here. |
 | `solution/` | Reference crate: runs green; compare only after your own attempt. |
-| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | The three vibe-coding prompts for this activity. |
+| `samples/` | Small runnable Rust sample scripts that teach the concepts of this activity. |
+| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | Learn Rust prompts, vibe-coding prompts, samples and learn-more links. |
 | `docs/` | Review and verification records you complete. |
 
 ## Step-by-step
 
 1. **Read the specification.** Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 2. **Open the activity in VS Code.** Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
-3. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, including the non-ASCII and whitespace cases.)
-4. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
-5. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
-6. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
-7. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
-8. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
-9. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a category_prefix(&str) -> Option<&str> that returns the first three letters of a valid SKU.
-10. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+3. **Learn the concept first.** Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain String versus &str, trimming, UTF-8 bytes versus chars, and validating text. The Learn more links point to the matching Rust Book and tutorial pages.
+4. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, including the non-ASCII and whitespace cases.)
+5. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+6. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+7. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+8. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+9. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+10. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a category_prefix(&str) -> Option<&str> that returns the first three letters of a valid SKU.
+11. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+
+## Learn the concepts
+
+This activity uses String versus &str, trimming, UTF-8 bytes versus chars, and validating text. Run the samples, then ask your AI assistant the Learn Rust prompts below.
+
+| Sample | Run it | Expected output |
+|---|---|---|
+| [`01_string_and_str.rs`](samples/01_string_and_str.rs) | `rustc --edition 2021 01_string_and_str.rs && ./01_string_and_str` | "  abc-1234  ": 12 bytes, 12 chars<br>"abc-1234": 8 bytes, 8 chars<br>"ABC-1234": 8 bytes, 8 chars<br>"ÄBC-1234": 9 bytes, 8 chars |
+| [`02_chars_and_validation.rs`](samples/02_chars_and_validation.rs) | `rustc --edition 2021 02_chars_and_validation.rs && ./02_chars_and_validation` | "ABC-1234" valid = true<br>" ABC-1234\n" valid = true<br>"abc-1234" valid = false<br>"ABC-12A4" valid = false<br>"ÄBC-1234" valid = false |
+
+### Learn Rust prompts
+
+**Explain it simply.** I am learning Rust. Explain String versus &str, trimming, UTF-8 bytes versus chars, and validating text to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+**Walk me through the sample.** Here is samples/01_string_and_str.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+**Quiz me.** Quiz me on String versus &str, trimming, UTF-8 bytes versus chars, and validating text with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+**Compare with what I know.** I know some Python or JavaScript. In a small table, compare how Rust handles strings and text with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+### Learn more
+
+- [Rust Book: Storing UTF-8 Encoded Text with Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [W3Schools: Rust Strings](https://www.w3schools.com/rust/rust_strings.php)
+- [Programiz: Rust String](https://www.programiz.com/rust/string)
+
 
 ## Commands
 

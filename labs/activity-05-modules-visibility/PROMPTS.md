@@ -1,6 +1,26 @@
-# Activity 5: vibe-coding prompts
+# Activity 5: prompts
 
 Use these in your AI coding assistant. Paste only the specification, the relevant source file and cargo output; never paste passwords, API keys or assessment answers.
+
+# Part 1: Learn Rust
+
+## Explain it simply
+
+> I am learning Rust. Explain modules, pub visibility, paths with crate::, self:: and super::, and use ... as to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+## Walk me through the sample
+
+> Here is samples/01_inline_modules.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+## Quiz me
+
+> Quiz me on modules, pub visibility, paths with crate::, self:: and super::, and use ... as with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+## Compare with what I know
+
+> I know some Python or JavaScript. In a small table, compare how Rust handles modules and code organisation with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+# Part 2: Build with AI (vibe coding)
 
 ## Plan before code
 

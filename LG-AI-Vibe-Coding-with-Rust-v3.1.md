@@ -1,10 +1,10 @@
 # AI Vibe Coding with Rust - Learner Guide
 
-TGS-2023039924 / version 3.0 / 27 September 2026
+TGS-2023039924 / version 3.1 / 27 September 2026
 
 ## How to Use This Guide
 
-This Learner Guide accompanies the AI Vibe Coding with Rust course (TGS-2023039924, version 3.0). The slides teach each concept with code, a contract and a failure mode; this guide repeats that teaching and adds the complete, step-by-step instructions for all 14 hands-on activities, the reference code and the commands that prove your work.
+This Learner Guide accompanies the AI Vibe Coding with Rust course (TGS-2023039924, version 3.1). The slides teach each concept with code, a contract and a failure mode; this guide repeats that teaching and adds the complete, step-by-step instructions for all 14 hands-on activities, the reference code and the commands that prove your work.
 
 StockPilot is the stock service of a small electronics retailer. Every activity builds or reviews one component of it: order lines, product codes, inventory records, commands, reports, data files, reorder planning and the documentation handed to the maintenance team.
 
@@ -32,6 +32,22 @@ cd TGS-2023039924-AI-Vibe-Coding-with-Rust/labs/activity-01-line-total/solution
 cargo test
 ```
 
+## Learn Rust: Recommended Resources
+
+Use these free resources before, during and after the course. Each activity also links the exact Rust Book and tutorial pages for its concepts, and contains runnable sample scripts in its samples/ folder.
+
+| Resource | Link |
+|---|---|
+| Rust official learning hub (the Book, Rustlings, Rust by Example) | https://rust-lang.org/learn/ |
+| W3Schools Rust tutorial | https://www.w3schools.com/rust/ |
+| W3Schools: Get Started with Rust | https://www.w3schools.com/rust/rust_getstarted.php |
+| Programiz: Learn Rust | https://www.programiz.com/rust |
+| IONOS Digital Guide: Rust tutorial | https://www.ionos.com/digitalguide/websites/web-development/rust-tutorial/ |
+| JetBrains: Getting Started with Rust | https://lp.jetbrains.com/getting-started-with-rust/ |
+| OneCompiler: Rust tutorial (runs in the browser) | https://onecompiler.com/tutorials/rust |
+| It's FOSS: Rust programming tutorial series | https://itsfoss.com/rust-tutorials/ |
+| r/rust community thread: "Rust tutorial that actually teaches Rust" | https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/ |
+
 ## Course Outcomes and Assessment
 
 LO1: Determine basic software components using programming methodologies to meet functional specifications (K1/A1).
@@ -46,11 +62,11 @@ LO5: Generate programming design documentation aligned with user specifications 
 
 Duration: 2 days, 16 hours (14 training hours and 2 assessment hours), 9:30 AM to 6:30 PM. On Day 2 the Written Assessment (5 open-ended questions, K1-K5, 60 minutes) runs 4:30-5:30 PM and the Practical Performance (5 hands-on tasks, A1-A5, 60 minutes) runs 5:30-6:30 PM. Both are open book and individual. Download papers and upload answers on the LMS: https://lms-tms.tertiaryinfotech.com/
 
-## Topic 1: Rust Programming Fundamentals and Software Components (Slides 16-55)
+## Topic 1: Rust Programming Fundamentals and Software Components (Slides 17-59)
 
 K1/A1 / LO1: Determine basic software components using programming methodologies to meet functional specifications (K1/A1).
 
-### A specification becomes a component contract (Slides 17-19)
+### A specification becomes a component contract (Slides 18-20)
 
 Requirement: Write the rule in business words before any code exists.
 
@@ -82,7 +98,7 @@ Common failure: Ambiguous rule. What to do: Ask the business owner (or the AI, t
 
 How you know it works: Every requirement ID appears in a test name or a trace table row.
 
-### The Rust toolchain: rustup, cargo and rustc (Slides 20-22)
+### The Rust toolchain: rustup, cargo and rustc (Slides 21-23)
 
 rustup: Installs and updates Rust toolchains and components.
 
@@ -115,7 +131,7 @@ Common failure: cargo: command not found. What to do: Open a new terminal so PAT
 
 How you know it works: rustc --version and cargo --version both print a version in the VS Code terminal.
 
-### Anatomy of a Cargo package (Slides 23-25)
+### Anatomy of a Cargo package (Slides 24-26)
 
 Cargo.toml: The manifest: package metadata and dependencies.
 
@@ -148,7 +164,7 @@ Common failure: Logic hidden in main.rs. What to do: Move it into lib.rs so inte
 
 How you know it works: cargo test builds lib, bin and tests; tests only use pub items.
 
-### Variables are immutable by default (Slides 26-28)
+### Variables are immutable by default (Slides 27-29)
 
 let: A binding cannot change unless you opt in with mut.
 
@@ -181,7 +197,7 @@ Common failure: error[E0384]: cannot assign twice. What to do: Add mut only if t
 
 How you know it works: The code compiles with no unused_mut warnings under clippy.
 
-### Choose integer types deliberately (Slides 29-31)
+### Choose integer types deliberately (Slides 30-32)
 
 Money: Store cents in an integer; floats cannot represent 0.10 exactly.
 
@@ -214,7 +230,7 @@ Common failure: attempt to multiply with overflow (panic). What to do: Replace *
 
 How you know it works: Tests at u64::MAX and u32::MAX prove the overflow policy.
 
-### Functions: the signature is the contract (Slides 32-34)
+### Functions: the signature is the contract (Slides 33-35)
 
 Parameters: Every parameter has an explicit type; nothing is inferred at the boundary.
 
@@ -248,7 +264,7 @@ Common failure: mismatched types: expected Option<u64>, found u64. What to do: W
 
 How you know it works: Five boundary tests in Activity 1 pass.
 
-### String and &str: owned text and borrowed text (Slides 35-37)
+### String and &str: owned text and borrowed text (Slides 36-38)
 
 String: Owns growable UTF-8 text on the heap.
 
@@ -281,7 +297,7 @@ Common failure: expected &str, found String. What to do: Pass a borrow: &my_stri
 
 How you know it works: Activity 2 tests pass, including "ÄBC-1234" being rejected.
 
-### Ownership moves; borrowing lends (Slides 38-40)
+### Ownership moves; borrowing lends (Slides 39-41)
 
 Owner: Every value has exactly one owner; it is dropped when the owner goes out of scope.
 
@@ -313,7 +329,7 @@ Common failure: error[E0382]: borrow of moved value. What to do: Borrow instead 
 
 How you know it works: Activity 3 compiles with no clone() and all five tests pass.
 
-### Activity 1: Turn a specification into a Rust function (Slides 41-45)
+### Activity 1: Turn a specification into a Rust function (Slides 42-47)
 
 Folder: labs/activity-01-line-total. Maps to K1/A1. Suggested time: 25 minutes.
 
@@ -321,27 +337,105 @@ Goal and scenario: StockPilot must price an order line. The specification limits
 
 Exact contract: line_total(unit_price_cents: u64, qty: u32) -> Option<u64>. qty 0 or above MAX_QTY (10,000) returns None; an overflowing product returns None; otherwise Some(total cents).
 
+#### Learn the concepts: Activity 1
+
+This activity uses Cargo, variables, mutability, constants, integer types and functions that return Option. Run the sample scripts in labs/activity-01-line-total/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_variables_and_types.rs. Run: rustc --edition 2021 01_variables_and_types.rs && ./01_variables_and_types
+
+```rust
+// Sample: variables, mutability, constants and integer types.
+const MAX_QTY: u32 = 10_000;
+
+fn main() {
+    let unit_price_cents: u64 = 250; // immutable by default
+    let mut qty: u32 = 4; // mut: this value will change
+    println!("price = {unit_price_cents} cents, qty = {qty}");
+    qty += 1;
+    println!("after adding one: qty = {qty} (max {MAX_QTY})");
+    let total = unit_price_cents * u64::from(qty);
+    println!(
+        "total = {total} cents = ${}.{:02}",
+        total / 100,
+        total % 100
+    );
+    let big: u64 = u64::MAX;
+    println!("checked_mul(2) on u64::MAX = {:?}", big.checked_mul(2));
+}
+```
+
+Expected output:
+
+```text
+price = 250 cents, qty = 4
+after adding one: qty = 5 (max 10000)
+total = 1250 cents = $12.50
+checked_mul(2) on u64::MAX = None
+```
+
+Sample samples/02_functions_and_option.rs. Run: rustc --edition 2021 02_functions_and_option.rs && ./02_functions_and_option
+
+```rust
+// Sample: a function whose return type says "this can be refused".
+fn line_total(unit_price_cents: u64, qty: u32) -> Option<u64> {
+    if qty == 0 || qty > 10_000 {
+        return None;
+    }
+    unit_price_cents.checked_mul(u64::from(qty))
+}
+
+fn main() {
+    for (price, qty) in [(250, 4), (250, 0), (1, 10_001), (u64::MAX, 2)] {
+        match line_total(price, qty) {
+            Some(total) => println!("{qty} x {price} = {total}"),
+            None => println!("{qty} x {price} rejected"),
+        }
+    }
+}
+```
+
+Expected output:
+
+```text
+4 x 250 = 1000
+0 x 250 rejected
+10001 x 1 rejected
+2 x 18446744073709551615 rejected
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain Cargo, variables, mutability, constants, integer types and functions that return Option to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_variables_and_types.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on Cargo, variables, mutability, constants, integer types and functions that return Option with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles variables, integer types and overflow with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Hello, Cargo! (https://doc.rust-lang.org/book/ch01-03-hello-cargo.html); Rust Book: Variables and Mutability (https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html); Rust Book: Data Types (https://doc.rust-lang.org/book/ch03-02-data-types.html); W3Schools: Rust Variables (https://www.w3schools.com/rust/rust_variables.php); W3Schools: Rust Data Types (https://www.w3schools.com/rust/rust_data_types.php); Programiz: Variables and Mutability (https://www.programiz.com/rust/variables-mutability); Programiz: Cargo (https://www.programiz.com/rust/cargo)
+
 #### Step-by-step: Activity 1
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; cargo run prints "4 x 250 cents = 1000 cents".)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain Cargo, variables, mutability, constants, integer types and functions that return Option. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; cargo run prints "4 x 250 cents = 1000 cents".)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a discount_percent parameter (0..=100) and two boundary tests for 0 and 100.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a discount_percent parameter (0..=100) and two boundary tests for 0 and 100.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 1
 
@@ -362,7 +456,7 @@ Generate with AI: Implement "Turn a specification into a Rust function" in start
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-01-line-total/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-01-line-total/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 1
 
@@ -444,7 +538,7 @@ Stretch task: Add a discount_percent parameter (0..=100) and two boundary tests 
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 2: Validate a product code with strings (Slides 46-50)
+### Activity 2: Validate a product code with strings (Slides 48-53)
 
 Folder: labs/activity-02-sku-validation. Maps to K1/A1. Suggested time: 25 minutes.
 
@@ -452,27 +546,110 @@ Goal and scenario: Product codes arrive from scanners and spreadsheets with stra
 
 Exact contract: is_valid_sku(&str) -> bool: after trimming, exactly 3 ASCII upper-case letters, "-", 4 ASCII digits. normalise_sku(&str) -> Option<String>: trimmed upper-case SKU when valid, else None.
 
+#### Learn the concepts: Activity 2
+
+This activity uses String versus &str, trimming, UTF-8 bytes versus chars, and validating text. Run the sample scripts in labs/activity-02-sku-validation/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_string_and_str.rs. Run: rustc --edition 2021 01_string_and_str.rs && ./01_string_and_str
+
+```rust
+// Sample: owned String versus borrowed &str, and bytes versus characters.
+fn describe(text: &str) {
+    println!(
+        "{text:?}: {} bytes, {} chars",
+        text.len(),
+        text.chars().count()
+    );
+}
+
+fn main() {
+    let owned: String = String::from("  abc-1234  ");
+    let trimmed: &str = owned.trim(); // borrows part of `owned`
+    let upper: String = trimmed.to_ascii_uppercase(); // new owned text
+    describe(&owned);
+    describe(trimmed);
+    describe(&upper);
+    describe("ÄBC-1234");
+}
+```
+
+Expected output:
+
+```text
+"  abc-1234  ": 12 bytes, 12 chars
+"abc-1234": 8 bytes, 8 chars
+"ABC-1234": 8 bytes, 8 chars
+"ÄBC-1234": 9 bytes, 8 chars
+```
+
+Sample samples/02_chars_and_validation.rs. Run: rustc --edition 2021 02_chars_and_validation.rs && ./02_chars_and_validation
+
+```rust
+// Sample: validating a product code character by character.
+fn is_valid_sku(code: &str) -> bool {
+    let chars: Vec<char> = code.trim().chars().collect();
+    chars.len() == 8
+        && chars[..3].iter().all(|c| c.is_ascii_uppercase())
+        && chars[3] == '-'
+        && chars[4..].iter().all(|c| c.is_ascii_digit())
+}
+
+fn main() {
+    for code in [
+        "ABC-1234",
+        " ABC-1234\n",
+        "abc-1234",
+        "ABC-12A4",
+        "ÄBC-1234",
+    ] {
+        println!("{code:?} valid = {}", is_valid_sku(code));
+    }
+}
+```
+
+Expected output:
+
+```text
+"ABC-1234" valid = true
+" ABC-1234\n" valid = true
+"abc-1234" valid = false
+"ABC-12A4" valid = false
+"ÄBC-1234" valid = false
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain String versus &str, trimming, UTF-8 bytes versus chars, and validating text to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_string_and_str.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on String versus &str, trimming, UTF-8 bytes versus chars, and validating text with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles strings and text with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Storing UTF-8 Encoded Text with Strings (https://doc.rust-lang.org/book/ch08-02-strings.html); W3Schools: Rust Strings (https://www.w3schools.com/rust/rust_strings.php); Programiz: Rust String (https://www.programiz.com/rust/string)
+
 #### Step-by-step: Activity 2
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, including the non-ASCII and whitespace cases.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain String versus &str, trimming, UTF-8 bytes versus chars, and validating text. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, including the non-ASCII and whitespace cases.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a category_prefix(&str) -> Option<&str> that returns the first three letters of a valid SKU.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a category_prefix(&str) -> Option<&str> that returns the first three letters of a valid SKU.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 2
 
@@ -492,7 +669,7 @@ Generate with AI: Implement "Validate a product code with strings" in starter/sr
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-02-sku-validation/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-02-sku-validation/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 2
 
@@ -570,7 +747,7 @@ Stretch task: Add a category_prefix(&str) -> Option<&str> that returns the first
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 3: Share inventory records with ownership and borrowing (Slides 51-55)
+### Activity 3: Share inventory records with ownership and borrowing (Slides 54-59)
 
 Folder: labs/activity-03-ownership-borrowing. Maps to K1/A1 K3/A3. Suggested time: 25 minutes.
 
@@ -578,27 +755,99 @@ Goal and scenario: Three StockPilot functions handle the same item list differen
 
 Exact contract: Item { sku, name, qty: u32 }. total_quantity(&[Item]) -> u64 reads; restock(&mut Item, u32) -> Option<u32> changes one item and leaves it unchanged on overflow; in_stock(Vec<Item>) -> Vec<Item> consumes the list.
 
+#### Learn the concepts: Activity 3
+
+This activity uses ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut). Run the sample scripts in labs/activity-03-ownership-borrowing/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_move_and_clone.rs. Run: rustc --edition 2021 01_move_and_clone.rs && ./01_move_and_clone
+
+```rust
+// Sample: moving ownership, cloning, and Copy types.
+fn consume(items: Vec<String>) -> usize {
+    items.len() // `items` is dropped at the end of this function
+}
+
+fn main() {
+    let items = vec![String::from("cable"), String::from("charger")];
+    let copy = items.clone(); // explicit deep copy
+    let count = consume(items); // ownership moves into `consume`
+                                // println!("{:?}", items); // error[E0382]: borrow of moved value
+    println!("consumed {count} items; the clone still has {copy:?}");
+    let n: u32 = 5;
+    let m = n; // integers are Copy: both stay usable
+    println!("n = {n}, m = {m}");
+}
+```
+
+Expected output:
+
+```text
+consumed 2 items; the clone still has ["cable", "charger"]
+n = 5, m = 5
+```
+
+Sample samples/02_borrowing.rs. Run: rustc --edition 2021 02_borrowing.rs && ./02_borrowing
+
+```rust
+// Sample: shared borrows read, a mutable borrow changes one element.
+fn total(stock: &[u32]) -> u32 {
+    stock.iter().sum()
+}
+
+fn restock(level: &mut u32, amount: u32) {
+    *level += amount;
+}
+
+fn main() {
+    let mut stock = vec![5, 0, 7];
+    println!("total before = {}", total(&stock)); // shared borrow
+    restock(&mut stock[1], 10); // exclusive borrow of one element
+    println!("stock after  = {stock:?}");
+    println!("total after  = {}", total(&stock));
+}
+```
+
+Expected output:
+
+```text
+total before = 12
+stock after  = [5, 10, 7]
+total after  = 22
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut) to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_move_and_clone.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut) with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles ownership and borrowing (memory management) with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: What Is Ownership? (https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html); Rust Book: References and Borrowing (https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html); W3Schools: Rust Ownership (https://www.w3schools.com/rust/rust_ownership.php); Programiz: Rust Ownership (https://www.programiz.com/rust/ownership); Programiz: References and Borrowing (https://www.programiz.com/rust/references-and-borrowing)
+
 #### Step-by-step: Activity 3
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the overflow test proves the item is unchanged.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut). The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the overflow test proves the item is unchanged.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add rename(item: &mut Item, new_name: &str) and a test proving the SKU is unchanged.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add rename(item: &mut Item, new_name: &str) and a test proving the SKU is unchanged.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 3
 
@@ -618,7 +867,7 @@ Generate with AI: Implement "Share inventory records with ownership and borrowin
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-03-ownership-borrowing/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-03-ownership-borrowing/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 3
 
@@ -726,11 +975,11 @@ Stretch task: Add rename(item: &mut Item, new_name: &str) and a test proving the
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-## Topic 2: AI Vibe Coding for Rust Application Development (Slides 56-95)
+## Topic 2: AI Vibe Coding for Rust Application Development (Slides 60-102)
 
 K2/A2 / LO2: Apply programming methodologies and tools for software creation (K2/A2).
 
-### The vibe-coding loop for Rust (Slides 57-59)
+### The vibe-coding loop for Rust (Slides 61-63)
 
 Intent: Describe the outcome in plain language, as a user would.
 
@@ -762,7 +1011,7 @@ Common failure: AI output looks right but was never run. What to do: Run cargo t
 
 How you know it works: Each activity review record shows prompt, decision and the passing test result.
 
-### Write a bounded prompt (Slides 60-62)
+### Write a bounded prompt (Slides 64-66)
 
 Role: Sets the expected quality bar and tone.
 
@@ -794,7 +1043,7 @@ Common failure: AI invents a crate or API. What to do: Reject; restate the limit
 
 How you know it works: The accepted proposal compiles, passes the tests and respects every limit.
 
-### The compiler is your first reviewer (Slides 63-65)
+### The compiler is your first reviewer (Slides 67-69)
 
 Error code: E0382 can be looked up with rustc --explain E0382.
 
@@ -828,7 +1077,7 @@ Common failure: Many errors after one AI change. What to do: Revert to the last 
 
 How you know it works: cargo build reports zero errors and zero warnings.
 
-### Review AI-generated Rust before accepting it (Slides 66-68)
+### Review AI-generated Rust before accepting it (Slides 70-72)
 
 unwrap/expect: Acceptable in tests; in library code they turn bad input into a crash.
 
@@ -861,7 +1110,7 @@ Common failure: Proposal passes tests but uses unwrap on input. What to do: Reje
 
 How you know it works: The review record lists at least one rejected or edited suggestion with a reason.
 
-### Modules and visibility organise a crate (Slides 69-71)
+### Modules and visibility organise a crate (Slides 73-75)
 
 mod: Declares a module; the file name matches the module name.
 
@@ -895,7 +1144,7 @@ Common failure: error[E0603]: function is private. What to do: Make it pub if it
 
 How you know it works: Activity 5 tests import activity05::money and activity05::report successfully.
 
-### Cargo dependencies and Cargo.lock (Slides 72-74)
+### Cargo dependencies and Cargo.lock (Slides 76-78)
 
 Semver: "1" means any compatible 1.x version.
 
@@ -928,7 +1177,7 @@ Common failure: failed to select a version / download error. What to do: Check t
 
 How you know it works: Activity 6 builds with serde 1.x recorded in Cargo.lock and 6 tests pass.
 
-### fmt and clippy encode team practice (Slides 75-77)
+### fmt and clippy encode team practice (Slides 79-81)
 
 rustfmt: One formatting style for everyone; no style debates in review.
 
@@ -961,7 +1210,7 @@ Common failure: clippy fails after an AI change. What to do: Read the lint link,
 
 How you know it works: Every activity solution passes fmt --check and clippy -D warnings.
 
-### Set up VS Code for Rust vibe coding (Slides 78-80)
+### Set up VS Code for Rust vibe coding (Slides 82-84)
 
 rust-analyzer: Shows the same errors as the compiler while you type.
 
@@ -994,7 +1243,7 @@ Common failure: rust-analyzer: failed to find a workspace. What to do: Open the 
 
 How you know it works: Hovering a variable shows its type and cargo test runs from the terminal.
 
-### Activity 4: Vibe-code a command parser (Slides 81-85)
+### Activity 4: Vibe-code a command parser (Slides 85-90)
 
 Folder: labs/activity-04-cli-commands. Maps to K2/A2. Suggested time: 25 minutes.
 
@@ -1002,27 +1251,102 @@ Goal and scenario: Store staff will type commands such as "add ABC-0001 5". You 
 
 Exact contract: parse_command(&[&str]) -> Result<Command, String>. Accepts exactly: list | add <sku> <qty> | remove <sku> <qty>. qty must parse as u32 and be at least 1. Anything else returns Err with a usage or reason message.
 
+#### Learn the concepts: Activity 4
+
+This activity uses reading command-line arguments, slice patterns, parsing text into numbers and returning Result. Run the sample scripts in labs/activity-04-cli-commands/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_command_line_args.rs. Run: rustc --edition 2021 01_command_line_args.rs && ./01_command_line_args add ABC-0001 5
+
+```rust
+// Sample: reading command-line arguments.
+use std::env;
+
+fn main() {
+    let args: Vec<String> = env::args().skip(1).collect();
+    if args.is_empty() {
+        println!("no arguments: try ./01_command_line_args add ABC-0001 5");
+        return;
+    }
+    for (index, arg) in args.iter().enumerate() {
+        println!("argument {index}: {arg}");
+    }
+}
+```
+
+Expected output:
+
+```text
+argument 0: add
+argument 1: ABC-0001
+argument 2: 5
+```
+
+Sample samples/02_parse_with_result.rs. Run: rustc --edition 2021 02_parse_with_result.rs && ./02_parse_with_result
+
+```rust
+// Sample: turning text into a number safely with Result and ?.
+fn parse_qty(text: &str) -> Result<u32, String> {
+    let qty: u32 = text
+        .parse()
+        .map_err(|_| format!("not a whole number: {text}"))?;
+    if qty == 0 {
+        return Err("quantity must be at least 1".to_string());
+    }
+    Ok(qty)
+}
+
+fn main() {
+    for input in ["5", "0", "five", "-3"] {
+        match parse_qty(input) {
+            Ok(qty) => println!("{input:>5} -> Ok({qty})"),
+            Err(message) => println!("{input:>5} -> Err({message})"),
+        }
+    }
+}
+```
+
+Expected output:
+
+```text
+    5 -> Ok(5)
+    0 -> Err(quantity must be at least 1)
+ five -> Err(not a whole number: five)
+   -3 -> Err(not a whole number: -3)
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain reading command-line arguments, slice patterns, parsing text into numbers and returning Result to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_command_line_args.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on reading command-line arguments, slice patterns, parsing text into numbers and returning Result with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles command-line input and parsing with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Programming a Guessing Game (https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html); Rust Book: An I/O Project (command-line program) (https://doc.rust-lang.org/book/ch12-00-an-io-project.html); W3Schools: Rust Functions (https://www.w3schools.com/rust/rust_functions.php); Programiz: Rust Function (https://www.programiz.com/rust/function)
+
 #### Step-by-step: Activity 4
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; cargo run -- add ABC-0001 5 prints Add { sku: "ABC-0001", qty: 5 }.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain reading command-line arguments, slice patterns, parsing text into numbers and returning Result. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; cargo run -- add ABC-0001 5 prints Add { sku: "ABC-0001", qty: 5 }.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run -- add ABC-0001 5 ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Ask the AI to add "count <sku>"; accept it only with a new test for the missing-SKU case.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run -- add ABC-0001 5 ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Ask the AI to add "count <sku>"; accept it only with a new test for the missing-SKU case.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 4
 
@@ -1043,7 +1367,7 @@ Generate with AI: Implement "Vibe-code a command parser" in starter/src so that 
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-04-cli-commands/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-04-cli-commands/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 4
 
@@ -1182,7 +1506,7 @@ Stretch task: Ask the AI to add "count <sku>"; accept it only with a new test fo
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 5: Organise a crate into modules (Slides 86-90)
+### Activity 5: Organise a crate into modules (Slides 91-96)
 
 Folder: labs/activity-05-modules-visibility. Maps to K2/A2. Suggested time: 25 minutes.
 
@@ -1190,27 +1514,123 @@ Goal and scenario: The reporting code has grown. You split StockPilot formatting
 
 Exact contract: money::format_cents(u64) -> String renders "$D.CC". report::report_line(name, qty, unit_cents) -> Option<String> renders "<name> x<qty> @ <unit> = <total>"; report::report joins lines with "\n" and fails wholly on overflow.
 
+#### Learn the concepts: Activity 5
+
+This activity uses modules, pub visibility, paths with crate::, self:: and super::, and use ... as. Run the sample scripts in labs/activity-05-modules-visibility/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_inline_modules.rs. Run: rustc --edition 2021 01_inline_modules.rs && ./01_inline_modules
+
+```rust
+// Sample: modules and privacy in one file.
+mod money {
+    pub fn format_cents(cents: u64) -> String {
+        format!("${}.{:02}", cents / 100, cents % 100)
+    }
+
+    fn secret_rule() -> &'static str {
+        "private: only code inside `money` can call this"
+    }
+
+    pub fn explain() -> &'static str {
+        secret_rule()
+    }
+}
+
+mod report {
+    use crate::money::format_cents; // path from the crate root
+
+    pub fn line(name: &str, qty: u32, unit: u64) -> String {
+        let total = unit * u64::from(qty);
+        format!(
+            "{name} x{qty} @ {} = {}",
+            format_cents(unit),
+            format_cents(total)
+        )
+    }
+}
+
+fn main() {
+    println!("{}", report::line("Cable", 3, 250));
+    println!("{}", money::explain());
+    // money::secret_rule(); // error[E0603]: function `secret_rule` is private
+}
+```
+
+Expected output:
+
+```text
+Cable x3 @ $2.50 = $7.50
+private: only code inside `money` can call this
+```
+
+Sample samples/02_nested_paths.rs. Run: rustc --edition 2021 02_nested_paths.rs && ./02_nested_paths
+
+```rust
+// Sample: nested modules, super::, self:: and use ... as.
+mod stockpilot {
+    pub mod inventory {
+        pub fn count() -> u32 {
+            super::defaults::STARTING_STOCK + 2
+        }
+    }
+
+    mod defaults {
+        pub const STARTING_STOCK: u32 = 10;
+    }
+
+    pub fn summary() -> String {
+        format!("stock count = {}", self::inventory::count())
+    }
+}
+
+use stockpilot::inventory::count as stock_count;
+
+fn main() {
+    println!("{}", stockpilot::summary());
+    println!("via use-as: {}", stock_count());
+}
+```
+
+Expected output:
+
+```text
+stock count = 12
+via use-as: 12
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain modules, pub visibility, paths with crate::, self:: and super::, and use ... as to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_inline_modules.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on modules, pub visibility, paths with crate::, self:: and super::, and use ... as with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles modules and code organisation with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Defining Modules to Control Scope and Privacy (https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html); Programiz: Cargo (packages and crates) (https://www.programiz.com/rust/cargo)
+
 #### Step-by-step: Activity 5
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 4 passed; tests import activity05::money and activity05::report.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain modules, pub visibility, paths with crate::, self:: and super::, and use ... as. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 4 passed; tests import activity05::money and activity05::report.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs, starter/src/money.rs, starter/src/report.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs, starter/src/money.rs, starter/src/report.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Move format_cents behind pub(crate) and explain which test import then fails to compile.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Move format_cents behind pub(crate) and explain which test import then fails to compile.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 5
 
@@ -1230,7 +1650,7 @@ Generate with AI: Implement "Organise a crate into modules" in starter/src so th
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-05-modules-visibility/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-05-modules-visibility/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 5
 
@@ -1332,7 +1752,7 @@ Stretch task: Move format_cents behind pub(crate) and explain which test import 
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 6: Load inventory JSON with Cargo dependencies (Slides 91-95)
+### Activity 6: Load inventory JSON with Cargo dependencies (Slides 97-102)
 
 Folder: labs/activity-06-cargo-serde-json. Maps to K2/A2 K4/A4. Suggested time: 25 minutes.
 
@@ -1340,27 +1760,125 @@ Goal and scenario: The purchasing team exports inventory as JSON. You add serde 
 
 Exact contract: Item { sku, name, qty: u32, unit_cents: u64 } derives Serialize and Deserialize. load_items(&str) -> Result<Vec<Item>, serde_json::Error>; to_json(&[Item]) -> Result<String, _>; stock_value(&[Item]) -> Option<u64>.
 
+#### Learn the concepts: Activity 6
+
+This activity uses Cargo dependencies, Cargo.lock, parsing structured text and what serde automates. Run the sample scripts in labs/activity-06-cargo-serde-json/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_manual_parsing.rs. Run: rustc --edition 2021 01_manual_parsing.rs && ./01_manual_parsing
+
+```rust
+// Sample: parsing "sku,qty" by hand - the work serde automates for JSON.
+struct Item {
+    sku: String,
+    qty: u32,
+}
+
+fn parse(line: &str) -> Result<Item, String> {
+    let (sku, qty) = line.split_once(',').ok_or("expected sku,qty")?;
+    let qty = qty.trim().parse::<u32>().map_err(|e| format!("qty: {e}"))?;
+    Ok(Item {
+        sku: sku.trim().to_string(),
+        qty,
+    })
+}
+
+fn main() {
+    for line in ["ABC-0001, 40", "ABC-0002,-1", "no comma"] {
+        match parse(line) {
+            Ok(item) => {
+                println!("{line:?} -> sku={} qty={}", item.sku, item.qty)
+            }
+            Err(error) => println!("{line:?} -> error: {error}"),
+        }
+    }
+}
+```
+
+Expected output:
+
+```text
+"ABC-0001, 40" -> sku=ABC-0001 qty=40
+"ABC-0002,-1" -> error: qty: invalid digit found in string
+"no comma" -> error: expected sku,qty
+```
+
+Sample samples/02_serialize_by_hand.rs. Run: rustc --edition 2021 02_serialize_by_hand.rs && ./02_serialize_by_hand
+
+```rust
+// Sample: writing JSON by hand with Display - fragile, which is why we use serde.
+use std::fmt;
+
+struct Item {
+    sku: String,
+    name: String,
+    qty: u32,
+    unit_cents: u64,
+}
+
+impl fmt::Display for Item {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            r#"{{"sku":"{}","name":"{}","qty":{},"unit_cents":{}}}"#,
+            self.sku, self.name, self.qty, self.unit_cents
+        )
+    }
+}
+
+fn main() {
+    let item = Item {
+        sku: "ABC-0001".into(),
+        name: "USB-C cable".into(),
+        qty: 40,
+        unit_cents: 899,
+    };
+    println!("{item}");
+    println!("Hand-written JSON breaks if a name contains a quote; serde escapes it for you.");
+}
+```
+
+Expected output:
+
+```text
+{"sku":"ABC-0001","name":"USB-C cable","qty":40,"unit_cents":899}
+Hand-written JSON breaks if a name contains a quote; serde escapes it for you.
+```
+
+Also run the serde example: cd solution && cargo run --example json_demo. First line of output: loaded 1 item(s); value = Some(35960) cents
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain Cargo dependencies, Cargo.lock, parsing structured text and what serde automates to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_manual_parsing.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on Cargo dependencies, Cargo.lock, parsing structured text and what serde automates with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles packages, dependencies and data formats with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Hello, Cargo! (https://doc.rust-lang.org/book/ch01-03-hello-cargo.html); Serde: overview and derive (https://serde.rs/); Programiz: Cargo (https://www.programiz.com/rust/cargo); W3Schools: Get Started with Rust (https://www.w3schools.com/rust/rust_getstarted.php)
+
 #### Step-by-step: Activity 6
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed; stock value of data/inventory.json is 65,948 cents.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain Cargo dependencies, Cargo.lock, parsing structured text and what serde automates. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed; stock value of data/inventory.json is 65,948 cents.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add #[serde(deny_unknown_fields)] and a test proving an extra "colour" field is rejected.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add #[serde(deny_unknown_fields)] and a test proving an extra "colour" field is rejected.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 6
 
@@ -1380,7 +1898,7 @@ Generate with AI: Implement "Load inventory JSON with Cargo dependencies" in sta
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-06-cargo-serde-json/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-06-cargo-serde-json/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 6
 
@@ -1492,11 +2010,11 @@ Stretch task: Add #[serde(deny_unknown_fields)] and a test proving an extra "col
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-## Topic 3: Rust Programming Controls, Functions and Features (Slides 96-136)
+## Topic 3: Rust Programming Controls, Functions and Features (Slides 103-146)
 
 K3/A3 / LO3: Select essential programming controls and features to meet software design requirements (K3/A3).
 
-### if and match are expressions (Slides 97-99)
+### if and match are expressions (Slides 104-106)
 
 Expression: if and match produce a value you can bind with let.
 
@@ -1528,7 +2046,7 @@ Common failure: error[E0004]: non-exhaustive patterns. What to do: Add the missi
 
 How you know it works: Boundary tests cover every arm.
 
-### enum + match model every case (Slides 100-102)
+### enum + match model every case (Slides 107-109)
 
 Variants with data: Each variant carries exactly the data it needs.
 
@@ -1561,7 +2079,7 @@ Common failure: New variant silently ignored. What to do: Avoid _ in matches ove
 
 How you know it works: Activity 7: six tests cover every variant and every error.
 
-### Loops: for, while and loop (Slides 103-105)
+### Loops: for, while and loop (Slides 110-112)
 
 for: Iterates over anything that implements IntoIterator.
 
@@ -1596,7 +2114,7 @@ Common failure: index out of bounds panic. What to do: Iterate with for x in &v 
 
 How you know it works: Activity 10 numbers errors from 1 and skips header and blank lines.
 
-### Structs and impl blocks (Slides 106-108)
+### Structs and impl blocks (Slides 113-115)
 
 Struct: Groups related data under one named type.
 
@@ -1631,7 +2149,7 @@ Common failure: cannot borrow as mutable (E0596). What to do: Declare the variab
 
 How you know it works: Activity 8: callers cannot touch the HashMap directly and six tests pass.
 
-### Collections: Vec and HashMap (Slides 109-111)
+### Collections: Vec and HashMap (Slides 116-118)
 
 Vec<T>: Growable, ordered list; index or iterate.
 
@@ -1664,7 +2182,7 @@ Common failure: Test passes locally, fails elsewhere. What to do: Output depende
 
 How you know it works: low_stock returns a sorted Vec so tests are deterministic.
 
-### Traits and generics share behaviour (Slides 112-114)
+### Traits and generics share behaviour (Slides 119-121)
 
 Trait: A named set of methods a type promises to provide.
 
@@ -1700,7 +2218,7 @@ Common failure: the trait bound `X: Priced` is not satisfied. What to do: Implem
 
 How you know it works: Activity 9 totals products, services and a mixed order.
 
-### Closures and iterator chains (Slides 115-117)
+### Closures and iterator chains (Slides 122-124)
 
 Closure: |p| ... is an anonymous function that can capture variables.
 
@@ -1733,7 +2251,7 @@ Common failure: value of type Vec<&str> cannot be built from iterator. What to d
 
 How you know it works: names_at_least keeps input order; try_fold returns None on overflow.
 
-### Option and Result are control features (Slides 118-120)
+### Option and Result are control features (Slides 125-127)
 
 Option<T>: Some(value) or None: absence without null.
 
@@ -1766,7 +2284,7 @@ Common failure: the ? operator can only be used in a function that returns Resul
 
 How you know it works: No unwrap() on input data remains in any solution crate.
 
-### Activity 7: Apply stock movements with enums and match (Slides 121-125)
+### Activity 7: Apply stock movements with enums and match (Slides 128-133)
 
 Folder: labs/activity-07-match-control-flow. Maps to K3/A3. Suggested time: 30 minutes.
 
@@ -1774,27 +2292,128 @@ Goal and scenario: Stock changes through receipts, shipments and manual adjustme
 
 Exact contract: Movement::{Receive(u32), Ship(u32), Adjust(i64)}. apply(stock, movement) -> Result<u32, StockError>: shipping more than available is Insufficient; results below zero are NegativeResult; above u32 are Overflow. apply_all stops at the first error.
 
+#### Learn the concepts: Activity 7
+
+This activity uses enums with data, match with guards, if let, ranges in patterns and loops. Run the sample scripts in labs/activity-07-match-control-flow/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_enum_match.rs. Run: rustc --edition 2021 01_enum_match.rs && ./01_enum_match
+
+```rust
+// Sample: an enum with data and an exhaustive match with a guard.
+enum Movement {
+    Receive(u32),
+    Ship(u32),
+    Adjust(i64),
+}
+
+fn describe(movement: &Movement) -> String {
+    match movement {
+        Movement::Receive(qty) => format!("receive {qty}"),
+        Movement::Ship(qty) if *qty > 100 => {
+            format!("ship {qty} (large order, needs approval)")
+        }
+        Movement::Ship(qty) => format!("ship {qty}"),
+        Movement::Adjust(delta) => format!("adjust by {delta:+}"),
+    }
+}
+
+fn main() {
+    let moves = [
+        Movement::Receive(10),
+        Movement::Ship(3),
+        Movement::Ship(250),
+        Movement::Adjust(-2),
+    ];
+    for movement in &moves {
+        println!("{}", describe(movement));
+    }
+}
+```
+
+Expected output:
+
+```text
+receive 10
+ship 3
+ship 250 (large order, needs approval)
+adjust by -2
+```
+
+Sample samples/02_ranges_if_let_loops.rs. Run: rustc --edition 2021 02_ranges_if_let_loops.rs && ./02_ranges_if_let_loops
+
+```rust
+// Sample: match on ranges, if let, and a while loop.
+fn status(qty: u32) -> &'static str {
+    match qty {
+        0 => "out of stock",
+        1..=4 => "low",
+        5..=99 => "ok",
+        _ => "bulk",
+    }
+}
+
+fn main() {
+    for qty in [0, 3, 5, 99, 100] {
+        println!("{qty:>3} -> {}", status(qty));
+    }
+    let found: Option<u32> = Some(7);
+    if let Some(qty) = found {
+        println!("if let found {qty}");
+    }
+    let mut countdown = 3;
+    while countdown > 0 {
+        print!("{countdown} ");
+        countdown -= 1;
+    }
+    println!("go");
+}
+```
+
+Expected output:
+
+```text
+  0 -> out of stock
+  3 -> low
+  5 -> ok
+ 99 -> ok
+100 -> bulk
+if let found 7
+3 2 1 go
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain enums with data, match with guards, if let, ranges in patterns and loops to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_enum_match.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on enums with data, match with guards, if let, ranges in patterns and loops with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles control flow: enum, match, if and loops with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Defining an Enum (https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html); Rust Book: The match Control Flow Construct (https://doc.rust-lang.org/book/ch06-02-match.html); W3Schools: Rust Enums (https://www.w3schools.com/rust/rust_enums.php); W3Schools: Rust Match (https://www.w3schools.com/rust/rust_match.php); W3Schools: Rust If .. Else (https://www.w3schools.com/rust/rust_if_else.php); W3Schools: Rust Loops (https://www.w3schools.com/rust/rust_loops.php); Programiz: Rust Enum (https://www.programiz.com/rust/enum); Programiz: Rust Loop (https://www.programiz.com/rust/loop)
+
 #### Step-by-step: Activity 7
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, covering every variant and every error.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain enums with data, match with guards, if let, ranges in patterns and loops. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed, covering every variant and every error.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add Movement::Return(u32) and let the compiler show every match you must update.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add Movement::Return(u32) and let the compiler show every match you must update.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 7
 
@@ -1814,7 +2433,7 @@ Generate with AI: Implement "Apply stock movements with enums and match" in star
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-07-match-control-flow/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-07-match-control-flow/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 7
 
@@ -1970,7 +2589,7 @@ Stretch task: Add Movement::Return(u32) and let the compiler show every match yo
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 8: Track stock in a HashMap (Slides 126-130)
+### Activity 8: Track stock in a HashMap (Slides 134-139)
 
 Folder: labs/activity-08-hashmap-inventory. Maps to K3/A3. Suggested time: 30 minutes.
 
@@ -1978,27 +2597,101 @@ Goal and scenario: StockPilot needs fast lookup by SKU. You wrap a HashMap in an
 
 Exact contract: Inventory::receive(&mut self, sku, qty) -> Option<u32> (None on overflow, unchanged); ship -> Result<u32, String> (unknown SKU or insufficient stock is Err, unchanged); quantity(sku) -> u32 (0 when unknown); low_stock(threshold) -> Vec<(String, u32)> strictly below threshold, sorted by SKU.
 
+#### Learn the concepts: Activity 8
+
+This activity uses Vec, HashMap, the entry API, Option from get, structs and sorting for deterministic output. Run the sample scripts in labs/activity-08-hashmap-inventory/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_vec_basics.rs. Run: rustc --edition 2021 01_vec_basics.rs && ./01_vec_basics
+
+```rust
+// Sample: a growable Vec, sorting, safe access with get.
+fn main() {
+    let mut skus: Vec<String> = Vec::new();
+    skus.push("CCC-0003".to_string());
+    skus.push("AAA-0001".to_string());
+    skus.push("BBB-0002".to_string());
+    skus.sort();
+    println!("sorted: {skus:?}");
+    println!("first: {:?}, tenth: {:?}", skus.first(), skus.get(9));
+    for (i, sku) in skus.iter().enumerate() {
+        println!("{}. {sku}", i + 1);
+    }
+}
+```
+
+Expected output:
+
+```text
+sorted: ["AAA-0001", "BBB-0002", "CCC-0003"]
+first: Some("AAA-0001"), tenth: None
+1. AAA-0001
+2. BBB-0002
+3. CCC-0003
+```
+
+Sample samples/02_hashmap_entry.rs. Run: rustc --edition 2021 02_hashmap_entry.rs && ./02_hashmap_entry
+
+```rust
+// Sample: counting stock with HashMap::entry, then sorting for stable output.
+use std::collections::HashMap;
+
+fn main() {
+    let deliveries = [("ABC-0001", 5), ("ABC-0002", 3), ("ABC-0001", 2)];
+    let mut stock: HashMap<&str, u32> = HashMap::new();
+    for (sku, qty) in deliveries {
+        *stock.entry(sku).or_insert(0) += qty;
+    }
+    let mut rows: Vec<(&str, u32)> =
+        stock.iter().map(|(s, q)| (*s, *q)).collect();
+    rows.sort(); // HashMap order is not defined: sort before printing
+    println!("{rows:?}");
+    match stock.get("ZZZ-9999") {
+        Some(qty) => println!("found {qty}"),
+        None => println!("ZZZ-9999 is not stocked"),
+    }
+}
+```
+
+Expected output:
+
+```text
+[("ABC-0001", 7), ("ABC-0002", 3)]
+ZZZ-9999 is not stocked
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain Vec, HashMap, the entry API, Option from get, structs and sorting for deterministic output to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_vec_basics.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on Vec, HashMap, the entry API, Option from get, structs and sorting for deterministic output with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles collections (lists and dictionaries) with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Storing Lists of Values with Vectors (https://doc.rust-lang.org/book/ch08-01-vectors.html); Rust Book: Storing Keys with Values in Hash Maps (https://doc.rust-lang.org/book/ch08-03-hash-maps.html); Rust Book: Defining and Instantiating Structs (https://doc.rust-lang.org/book/ch05-01-defining-structs.html); W3Schools: Rust Vectors (https://www.w3schools.com/rust/rust_vectors.php); W3Schools: Rust HashMap (https://www.w3schools.com/rust/rust_hashmap.php); W3Schools: Rust Structs (https://www.w3schools.com/rust/rust_structs.php); Programiz: Rust Vector (https://www.programiz.com/rust/vector); Programiz: Rust HashMap (https://www.programiz.com/rust/hashmap)
+
 #### Step-by-step: Activity 8
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed; low_stock(5) returns AAA-0001 and BBB-0002 only.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain Vec, HashMap, the entry API, Option from get, structs and sorting for deterministic output. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed; low_stock(5) returns AAA-0001 and BBB-0002 only.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a remove_sku method that refuses to delete an SKU with stock on hand.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a remove_sku method that refuses to delete an SKU with stock on hand.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 8
 
@@ -2018,7 +2711,7 @@ Generate with AI: Implement "Track stock in a HashMap" in starter/src so that th
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-08-hashmap-inventory/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-08-hashmap-inventory/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 8
 
@@ -2145,7 +2838,7 @@ Stretch task: Add a remove_sku method that refuses to delete an SKU with stock o
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 9: Price mixed order lines with traits and iterators (Slides 131-135)
+### Activity 9: Price mixed order lines with traits and iterators (Slides 140-145)
 
 Folder: labs/activity-09-traits-iterators. Maps to K3/A3. Suggested time: 30 minutes.
 
@@ -2153,27 +2846,140 @@ Goal and scenario: Orders can contain products and services (for example, device
 
 Exact contract: trait Priced { unit_cents, quantity, line_cents (default, checked) }. order_total<T: Priced>(&[T]) and mixed_total(&[&dyn Priced]) return Option<u64> (None on overflow; empty is Some(0)). names_at_least(&[Product], min_cents) -> Vec<&str> in input order.
 
+#### Learn the concepts: Activity 9
+
+This activity uses traits, default methods, generics, trait objects (dyn), closures and iterator adaptors. Run the sample scripts in labs/activity-09-traits-iterators/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_trait_basics.rs. Run: rustc --edition 2021 01_trait_basics.rs && ./01_trait_basics
+
+```rust
+// Sample: one trait, two types, generic and dynamic dispatch.
+trait Priced {
+    fn unit_cents(&self) -> u64;
+    fn quantity(&self) -> u32;
+    fn line_cents(&self) -> u64 {
+        self.unit_cents() * u64::from(self.quantity())
+    }
+}
+
+struct Product {
+    unit_cents: u64,
+    qty: u32,
+}
+
+struct Service {
+    rate_cents: u64,
+    hours: u32,
+}
+
+impl Priced for Product {
+    fn unit_cents(&self) -> u64 {
+        self.unit_cents
+    }
+    fn quantity(&self) -> u32 {
+        self.qty
+    }
+}
+
+impl Priced for Service {
+    fn unit_cents(&self) -> u64 {
+        self.rate_cents
+    }
+    fn quantity(&self) -> u32 {
+        self.hours
+    }
+}
+
+fn show<T: Priced>(label: &str, line: &T) {
+    println!("{label}: {} cents", line.line_cents());
+}
+
+fn main() {
+    let cable = Product {
+        unit_cents: 899,
+        qty: 2,
+    };
+    let setup = Service {
+        rate_cents: 5000,
+        hours: 2,
+    };
+    show("cable", &cable);
+    show("setup", &setup);
+    let order: Vec<&dyn Priced> = vec![&cable, &setup];
+    let total: u64 = order.iter().map(|line| line.line_cents()).sum();
+    println!("mixed order total: {total} cents");
+}
+```
+
+Expected output:
+
+```text
+cable: 1798 cents
+setup: 10000 cents
+mixed order total: 11798 cents
+```
+
+Sample samples/02_closures_iterators.rs. Run: rustc --edition 2021 02_closures_iterators.rs && ./02_closures_iterators
+
+```rust
+// Sample: closures and iterator chains instead of index loops.
+fn main() {
+    let prices = [899u64, 2499, 1299, 350];
+    let threshold = 1000;
+    let expensive: Vec<u64> =
+        prices.iter().copied().filter(|p| *p >= threshold).collect();
+    println!("at least {threshold}: {expensive:?}");
+    let doubled: Vec<u64> = prices.iter().map(|p| p * 2).collect();
+    println!("doubled: {doubled:?}");
+    let total = prices.iter().try_fold(0u64, |acc, p| acc.checked_add(*p));
+    println!("checked total: {total:?}");
+    let add_gst = |cents: u64| cents * 109 / 100;
+    println!("899 with 9% GST: {}", add_gst(899));
+}
+```
+
+Expected output:
+
+```text
+at least 1000: [2499, 1299]
+doubled: [1798, 4998, 2598, 700]
+checked total: Some(5047)
+899 with 9% GST: 979
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain traits, default methods, generics, trait objects (dyn), closures and iterator adaptors to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_trait_basics.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on traits, default methods, generics, trait objects (dyn), closures and iterator adaptors with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles traits, generics and iterators with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Traits: Defining Shared Behavior (https://doc.rust-lang.org/book/ch10-02-traits.html); Rust Book: Closures (https://doc.rust-lang.org/book/ch13-01-closures.html); Rust Book: Processing a Series of Items with Iterators (https://doc.rust-lang.org/book/ch13-02-iterators.html); Programiz: Rust Trait (https://www.programiz.com/rust/trait); Programiz: Rust Generics (https://www.programiz.com/rust/generics); Programiz: Rust Closure (https://www.programiz.com/rust/closure); Programiz: Rust Iterators (https://www.programiz.com/rust/iterators)
+
 #### Step-by-step: Activity 9
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the mixed order totals 14,297 cents.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain traits, default methods, generics, trait objects (dyn), closures and iterator adaptors. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the mixed order totals 14,297 cents.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a Subscription type implementing Priced and include it in mixed_total without changing that function.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a Subscription type implementing Priced and include it in mixed_total without changing that function.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 9
 
@@ -2193,7 +2999,7 @@ Generate with AI: Implement "Price mixed order lines with traits and iterators" 
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-09-traits-iterators/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-09-traits-iterators/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 9
 
@@ -2354,11 +3160,11 @@ Stretch task: Add a Subscription type implementing Priced and include it in mixe
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-## Topic 4: Testing, Debugging and Integrating Rust Components (Slides 137-174)
+## Topic 4: Testing, Debugging and Integrating Rust Components (Slides 147-187)
 
 K4/A4 / LO4: Examine the interoperability and functionality of programming components (K4/A4).
 
-### Unit tests live beside the code (Slides 138-140)
+### Unit tests live beside the code (Slides 148-150)
 
 #[test]: Marks a function that cargo test runs.
 
@@ -2395,7 +3201,7 @@ Common failure: Test passes for the wrong reason. What to do: Predict the expect
 
 How you know it works: cargo test lists each test by name with ok.
 
-### Integration tests check components together (Slides 141-143)
+### Integration tests check components together (Slides 151-153)
 
 tests/ folder: Each file is compiled like an external user of the crate.
 
@@ -2430,7 +3236,7 @@ Common failure: Unit tests pass but the summary is wrong. What to do: Components
 
 How you know it works: Activity 11: the end-to-end test fixes the expected total at 52,655 cents.
 
-### Custom errors and the ? operator (Slides 144-146)
+### Custom errors and the ? operator (Slides 154-156)
 
 Error enum: Each failure is a named, testable variant.
 
@@ -2464,7 +3270,7 @@ Common failure: Error says only "invalid digit". What to do: Map low-level error
 
 How you know it works: Activity 10 reports errors on lines 3, 4 and 6 with readable messages.
 
-### Read a failing test like a detective (Slides 147-149)
+### Read a failing test like a detective (Slides 157-159)
 
 Test name: Tells you which rule is broken.
 
@@ -2496,7 +3302,7 @@ Common failure: Changing the expected value to make it pass. What to do: Forbidd
 
 How you know it works: After the fix, the same test passes and stays as a regression test.
 
-### Debug with dbg!, focused tests and AI (Slides 150-152)
+### Debug with dbg!, focused tests and AI (Slides 160-162)
 
 dbg!: Prints the expression, its value and where it ran; returns the value.
 
@@ -2528,7 +3334,7 @@ Common failure: Fix works for the test but breaks another. What to do: Run the w
 
 How you know it works: Activity 11 ends with 6 passed and a written defect record.
 
-### Interoperability: arguments, files, exit codes (Slides 153-155)
+### Interoperability: arguments, files, exit codes (Slides 163-165)
 
 Arguments: std::env::args(); validate count and types.
 
@@ -2560,7 +3366,7 @@ Common failure: Script cannot tell success from failure. What to do: Return a no
 
 How you know it works: Activity 12 process tests check stdout, stderr and exit codes 0, 1 and 2.
 
-### Serde: typed data at the boundary (Slides 156-158)
+### Serde: typed data at the boundary (Slides 166-168)
 
 Derive: Serialize/Deserialize are generated from the struct.
 
@@ -2594,7 +3400,7 @@ Common failure: invalid value: integer -1, expected u32. What to do: Correct the
 
 How you know it works: Activity 6 rejects a missing field and a negative quantity.
 
-### Activity 10: Parse CSV records with Result and custom errors (Slides 159-163)
+### Activity 10: Parse CSV records with Result and custom errors (Slides 169-174)
 
 Folder: labs/activity-10-error-handling. Maps to K4/A4. Suggested time: 30 minutes.
 
@@ -2602,27 +3408,138 @@ Goal and scenario: Stock files arrive with typos. Instead of crashing, StockPilo
 
 Exact contract: parse_record(&str) -> Result<Record, ParseError> with ParseError::{FieldCount(n), EmptySku, BadNumber{field, value}} and a Display message for each. parse_all(&str) skips blank lines and the header, returning valid records and (1-based line number, error) pairs.
 
+#### Learn the concepts: Activity 10
+
+This activity uses Result, the ? operator, custom error enums, Display and Box<dyn Error>. Run the sample scripts in labs/activity-10-error-handling/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_result_and_question_mark.rs. Run: rustc --edition 2021 01_result_and_question_mark.rs && ./01_result_and_question_mark
+
+```rust
+// Sample: Result and the ? operator.
+use std::num::ParseIntError;
+
+fn parse_qty(text: &str) -> Result<u32, ParseIntError> {
+    text.trim().parse::<u32>()
+}
+
+fn total_qty(a: &str, b: &str) -> Result<u32, ParseIntError> {
+    let first = parse_qty(a)?; // returns early on Err
+    let second = parse_qty(b)?;
+    Ok(first + second)
+}
+
+fn main() {
+    println!("{:?}", total_qty("4", " 6 "));
+    match total_qty("4", "six") {
+        Ok(total) => println!("total {total}"),
+        Err(error) => println!("error: {error}"),
+    }
+}
+```
+
+Expected output:
+
+```text
+Ok(10)
+error: invalid digit found in string
+```
+
+Sample samples/02_custom_error.rs. Run: rustc --edition 2021 02_custom_error.rs && ./02_custom_error
+
+```rust
+// Sample: a custom error type with Display, used with ? in main.
+use std::fmt;
+
+#[derive(Debug)]
+enum StockError {
+    Unknown(String),
+    Insufficient { available: u32, requested: u32 },
+}
+
+impl fmt::Display for StockError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            StockError::Unknown(sku) => write!(f, "unknown SKU {sku}"),
+            StockError::Insufficient {
+                available,
+                requested,
+            } => {
+                write!(
+                    f,
+                    "requested {requested} but only {available} available"
+                )
+            }
+        }
+    }
+}
+
+impl std::error::Error for StockError {}
+
+fn ship(sku: &str, available: u32, requested: u32) -> Result<u32, StockError> {
+    if sku != "ABC-0001" {
+        return Err(StockError::Unknown(sku.to_string()));
+    }
+    if requested > available {
+        return Err(StockError::Insufficient {
+            available,
+            requested,
+        });
+    }
+    Ok(available - requested)
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("left: {}", ship("ABC-0001", 5, 2)?);
+    for (sku, requested) in [("ZZZ-9999", 1), ("ABC-0001", 9)] {
+        if let Err(error) = ship(sku, 5, requested) {
+            println!("error: {error}");
+        }
+    }
+    Ok(())
+}
+```
+
+Expected output:
+
+```text
+left: 3
+error: unknown SKU ZZZ-9999
+error: requested 9 but only 5 available
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain Result, the ? operator, custom error enums, Display and Box<dyn Error> to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_result_and_question_mark.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on Result, the ? operator, custom error enums, Display and Box<dyn Error> with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles error handling with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Recoverable Errors with Result (https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html); Programiz: Rust Error Handling (https://www.programiz.com/rust/error-handling)
+
 #### Step-by-step: Activity 10
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; data/stock.csv yields 2 records and errors on lines 3, 4 and 6.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain Result, the ? operator, custom error enums, Display and Box<dyn Error>. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; data/stock.csv yields 2 records and errors on lines 3, 4 and 6.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add ParseError::NegativeValue for "-1" so the message is clearer than BadNumber.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add ParseError::NegativeValue for "-1" so the message is clearer than BadNumber.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 10
 
@@ -2642,7 +3559,7 @@ Generate with AI: Implement "Parse CSV records with Result and custom errors" in
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-10-error-handling/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-10-error-handling/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 10
 
@@ -2828,7 +3745,7 @@ Stretch task: Add ParseError::NegativeValue for "-1" so the message is clearer t
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 11: Debug a failing integration with tests (Slides 164-168)
+### Activity 11: Debug a failing integration with tests (Slides 175-180)
 
 Folder: labs/activity-11-debug-integration. Maps to K4/A4. Suggested time: 35 minutes.
 
@@ -2836,27 +3753,109 @@ Goal and scenario: The nightly stock summary is wrong: the total is too low and 
 
 Exact contract: summarise(csv, threshold) -> Result<Summary, String> where Summary { lines, total_cents, low_stock }. Every line counts towards the total; low stock is strictly below the threshold, sorted by SKU; malformed lines are Err("line N: ...").
 
+#### Learn the concepts: Activity 11
+
+This activity uses assertions, dbg!, unit tests with #[test], and reading a failing test. Run the sample scripts in labs/activity-11-debug-integration/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_dbg_and_assert.rs. Run: rustc --edition 2021 01_dbg_and_assert.rs && ./01_dbg_and_assert
+
+```rust
+// Sample: dbg! and assert_eq! as debugging tools.
+fn total(values: &[u64]) -> u64 {
+    values.iter().sum()
+}
+
+fn main() {
+    let values = [35_960, 12_495, 0, 4_200];
+    let result = dbg!(total(&values)); // prints file:line and value to stderr
+    assert_eq!(result, 52_655, "total must include every line");
+    let skipped: u64 = values.iter().skip(1).sum();
+    println!("correct total {result}, total without the first line {skipped}");
+    println!("difference {} = the first line", result - skipped);
+}
+```
+
+Expected output:
+
+```text
+correct total 52655, total without the first line 16695
+difference 35960 = the first line
+```
+
+Sample samples/02_unit_tests.rs. Run: rustc --edition 2021 --test 02_unit_tests.rs && ./02_unit_tests
+
+```rust
+// Sample: unit tests in one file. Run with the --test flag (see README).
+pub fn low_stock(levels: &[(&str, u32)], threshold: u32) -> Vec<String> {
+    let mut skus: Vec<String> = levels
+        .iter()
+        .filter(|(_, qty)| *qty < threshold)
+        .map(|(sku, _)| sku.to_string())
+        .collect();
+    skus.sort();
+    skus
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn strictly_below_threshold() {
+        assert_eq!(low_stock(&[("A", 4), ("B", 5)], 5), ["A"]);
+    }
+
+    #[test]
+    fn sorted_output() {
+        assert_eq!(low_stock(&[("B", 0), ("A", 1)], 5), ["A", "B"]);
+    }
+
+    #[test]
+    fn nothing_is_low_at_zero() {
+        assert!(low_stock(&[("A", 0)], 0).is_empty());
+    }
+}
+```
+
+Expected output:
+
+```text
+test result: ok. 3 passed
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain assertions, dbg!, unit tests with #[test], and reading a failing test to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_dbg_and_assert.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on assertions, dbg!, unit tests with #[test], and reading a failing test with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles testing and debugging with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: How to Write Tests (https://doc.rust-lang.org/book/ch11-01-writing-tests.html); Rust Book: Test Organization (https://doc.rust-lang.org/book/ch11-03-test-organization.html)
+
 #### Step-by-step: Activity 11
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (Starter: 4 of 6 tests fail. After both fixes cargo test reports 6 passed.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain assertions, dbg!, unit tests with #[test], and reading a failing test. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Four of the six tests fail because the starter contains two real defects; the other two pass. Read the first failure: note the test name, the expected value and the actual value.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (Starter: 4 of 6 tests fail. After both fixes cargo test reports 6 passed.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Four of the six tests fail because the starter contains two real defects; the other two pass. Read the first failure: note the test name, the expected value and the actual value.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a test for threshold 0 (nothing is low) and explain why it passed even before the fix.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a test for threshold 0 (nothing is low) and explain why it passed even before the fix.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 11
 
@@ -2876,7 +3875,7 @@ Generate with AI: Implement "Debug a failing integration with tests" in starter/
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-11-debug-integration/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-11-debug-integration/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 11
 
@@ -3038,7 +4037,7 @@ Stretch task: Add a test for threshold 0 (nothing is low) and explain why it pas
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 12: Integrate components into a tested command-line tool (Slides 169-173)
+### Activity 12: Integrate components into a tested command-line tool (Slides 181-186)
 
 Folder: labs/activity-12-cli-integration. Maps to K4/A4. Suggested time: 30 minutes.
 
@@ -3046,27 +4045,92 @@ Goal and scenario: Operations staff will run StockPilot from a terminal and from
 
 Exact contract: run(csv, threshold) -> Result<String, String> returns "ITEMS n\nTOTAL $D.CC\nLOW STOCK a, b | none". The binary takes <file> [threshold=5]; exit 0 on success, 1 for unreadable or invalid data, 2 for usage errors.
 
+#### Learn the concepts: Activity 12
+
+This activity uses reading files, command-line arguments, stdout versus stderr and process exit codes. Run the sample scripts in labs/activity-12-cli-integration/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_read_file_and_exit_code.rs. Run: rustc --edition 2021 01_read_file_and_exit_code.rs && ./01_read_file_and_exit_code ../data/stock.csv
+
+```rust
+// Sample: read a file named on the command line; exit code 1 if it fails.
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
+    let path = std::env::args()
+        .nth(1)
+        .unwrap_or_else(|| "missing.csv".to_string());
+    match std::fs::read_to_string(&path) {
+        Ok(text) => {
+            println!("{path}: {} line(s)", text.lines().count());
+            ExitCode::SUCCESS
+        }
+        Err(error) => {
+            eprintln!("error: cannot read {path}: {error}");
+            ExitCode::from(1)
+        }
+    }
+}
+```
+
+Expected output:
+
+```text
+../data/stock.csv: 5 line(s)
+```
+
+Sample samples/02_stdout_stderr.rs. Run: rustc --edition 2021 02_stdout_stderr.rs && ./02_stdout_stderr
+
+```rust
+// Sample: results to stdout, diagnostics to stderr, and an explicit exit code.
+fn main() {
+    println!("ITEMS 4"); // stdout: the report, safe to pipe into a file
+    eprintln!("note: diagnostics go to stderr"); // stderr: messages for people
+    let code = if std::env::args().count() > 1 { 2 } else { 0 };
+    println!("exit code will be {code}");
+    std::process::exit(code);
+}
+```
+
+Expected output:
+
+```text
+ITEMS 4
+exit code will be 0
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain reading files, command-line arguments, stdout versus stderr and process exit codes to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_read_file_and_exit_code.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on reading files, command-line arguments, stdout versus stderr and process exit codes with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles building command-line tools with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: An I/O Project: Building a Command Line Program (https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+
 #### Step-by-step: Activity 12
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 7 passed; cargo run -- ../data/stock.csv prints ITEMS 4, TOTAL $526.55, LOW STOCK ABC-0003.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain reading files, command-line arguments, stdout versus stderr and process exit codes. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 7 passed; cargo run -- ../data/stock.csv prints ITEMS 4, TOTAL $526.55, LOW STOCK ABC-0003.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run -- ../data/stock.csv ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a --json flag that prints the same report as JSON, with one new process test.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo run -- ../data/stock.csv ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a --json flag that prints the same report as JSON, with one new process test.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 12
 
@@ -3087,7 +4151,7 @@ Generate with AI: Implement "Integrate components into a tested command-line too
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-12-cli-integration/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-12-cli-integration/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 12
 
@@ -3273,11 +4337,11 @@ Stretch task: Add a --json flag that prints the same report as JSON, with one ne
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-## Topic 5: AI-Assisted Rust Software Design and Documentation (Slides 175-207)
+## Topic 5: AI-Assisted Rust Software Design and Documentation (Slides 188-222)
 
 K5/A5 / LO5: Generate programming design documentation aligned with user specifications (K5/A5).
 
-### Doc comments become documentation (Slides 176-178)
+### Doc comments become documentation (Slides 189-191)
 
 //!: Documents the enclosing item: the crate or module.
 
@@ -3312,7 +4376,7 @@ Common failure: warning: missing documentation for a function. What to do: Add a
 
 How you know it works: cargo doc builds and clippy -D warnings reports no missing docs.
 
-### Doctests keep examples honest (Slides 179-181)
+### Doctests keep examples honest (Slides 192-194)
 
 Doctest: A code block in docs is compiled and run by cargo test.
 
@@ -3347,7 +4411,7 @@ Common failure: Doctest fails after a code change. What to do: Update the exampl
 
 How you know it works: Activity 13: 3 unit tests and 3 doctests pass.
 
-### Trace requirements to code and tests (Slides 182-184)
+### Trace requirements to code and tests (Slides 195-197)
 
 Trace matrix: Each user requirement links to code and a named test.
 
@@ -3382,7 +4446,7 @@ Common failure: Requirement without a test. What to do: Add a test named after t
 
 How you know it works: Activity 14 design.md traces R1-R4 to named, passing tests.
 
-### Architecture and module maps (Slides 185-187)
+### Architecture and module maps (Slides 198-200)
 
 Components: One box per module with a single responsibility.
 
@@ -3417,7 +4481,7 @@ Common failure: Diagram disagrees with the code. What to do: Generate the module
 
 How you know it works: Every box in design.md exists as a module or function in the crate.
 
-### Record design decisions (Slides 188-190)
+### Record design decisions (Slides 201-203)
 
 Decision: What was decided, in one sentence.
 
@@ -3449,7 +4513,7 @@ Common failure: Nobody knows why the code behaves this way. What to do: Add a de
 
 How you know it works: design.md contains at least one complete decision record.
 
-### AI-assisted documentation, human-verified (Slides 191-193)
+### AI-assisted documentation, human-verified (Slides 204-206)
 
 Grounding: Give the AI the code and requirements, nothing else.
 
@@ -3481,7 +4545,7 @@ Common failure: Docs claim a feature that does not exist. What to do: Delete the
 
 How you know it works: The AI review table in design.md lists verified and corrected sections.
 
-### Hand over: README and maintenance notes (Slides 194-196)
+### Hand over: README and maintenance notes (Slides 207-209)
 
 Audience: Written for the maintainer who joins next month.
 
@@ -3512,7 +4576,7 @@ Common failure: Handover depends on the original developer. What to do: Write do
 
 How you know it works: A classmate can build, test and explain the capstone from its README and design.md.
 
-### Activity 13: Document an API with rustdoc and doctests (Slides 197-201)
+### Activity 13: Document an API with rustdoc and doctests (Slides 210-215)
 
 Folder: labs/activity-13-rustdoc-doctests. Maps to K5/A5. Suggested time: 30 minutes.
 
@@ -3520,27 +4584,104 @@ Goal and scenario: The maintenance team will own the reorder calculation. The st
 
 Exact contract: reorder_point(daily_usage, lead_days, safety_stock) -> Option<u32> = daily_usage x lead_days + safety_stock (R1), None on overflow (R2). needs_reorder(on_hand, point) is true at or below the point (R3). Every public item is documented; cargo clippy with -D warnings enforces missing_docs.
 
+#### Learn the concepts: Activity 13
+
+This activity uses doc comments (/// and //!), # Examples sections, doctests and rustdoc. Run the sample scripts in labs/activity-13-rustdoc-doctests/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_doc_comments.rs. Run: rustc --edition 2021 --crate-type lib --crate-name docsample 01_doc_comments.rs && rustdoc --edition 2021 --test --crate-type lib --crate-name docsample -L . 01_doc_comments.rs
+
+```rust
+//! Sample library: document an API so rustdoc can render it and test it.
+
+/// Days of usage kept as safety stock.
+pub const SAFETY_DAYS: u32 = 2;
+
+/// Returns the safety stock in units for a daily usage.
+///
+/// # Examples
+///
+/// ```
+/// assert_eq!(docsample::safety_stock(12), Some(24));
+/// assert_eq!(docsample::safety_stock(u32::MAX), None);
+/// ```
+pub fn safety_stock(daily_usage: u32) -> Option<u32> {
+    daily_usage.checked_mul(SAFETY_DAYS)
+}
+```
+
+Expected output:
+
+```text
+test result: ok. 1 passed
+```
+
+Sample samples/02_errors_section.rs. Run: rustc --edition 2021 --crate-type lib --crate-name docsample2 02_errors_section.rs && rustdoc --edition 2021 --test --crate-type lib --crate-name docsample2 -L . 02_errors_section.rs
+
+```rust
+//! Sample library: documenting a function that returns Result.
+
+/// Parses a whole-number quantity.
+///
+/// # Errors
+///
+/// Returns a message when `text` is not a whole number.
+///
+/// # Examples
+///
+/// ```
+/// # fn main() -> Result<(), String> {
+/// let qty = docsample2::parse_qty(" 7 ")?;
+/// assert_eq!(qty, 7);
+/// assert!(docsample2::parse_qty("seven").is_err());
+/// # Ok(())
+/// # }
+/// ```
+pub fn parse_qty(text: &str) -> Result<u32, String> {
+    text.trim()
+        .parse()
+        .map_err(|_| format!("not a whole number: {text}"))
+}
+```
+
+Expected output:
+
+```text
+test result: ok. 1 passed
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain doc comments (/// and //!), # Examples sections, doctests and rustdoc to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_doc_comments.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on doc comments (/// and //!), # Examples sections, doctests and rustdoc with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles writing documentation with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Publishing a Crate (documentation comments) (https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html); The rustdoc Book: Documentation tests (https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
+
 #### Step-by-step: Activity 13
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test runs 3 tests and 3 doctests; cargo doc --no-deps builds; clippy -D warnings is clean.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain doc comments (/// and //!), # Examples sections, doctests and rustdoc. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. cargo test passes because the logic already works, but cargo clippy --all-targets -- -D warnings fails with "missing documentation" errors. Your job is the documentation.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test runs 3 tests and 3 doctests; cargo doc --no-deps builds; clippy -D warnings is clean.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. cargo test passes because the logic already works, but cargo clippy --all-targets -- -D warnings fails with "missing documentation" errors. Your job is the documentation.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo doc --no-deps ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a # Panics or # Errors section policy to docs/design-note.md and justify why neither applies here.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo doc --no-deps ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add a # Panics or # Errors section policy to docs/design-note.md and justify why neither applies here.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 13
 
@@ -3561,7 +4702,7 @@ Generate with AI: Implement "Document an API with rustdoc and doctests" in start
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-13-rustdoc-doctests/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-13-rustdoc-doctests/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 13
 
@@ -3652,7 +4793,7 @@ Stretch task: Add a # Panics or # Errors section policy to docs/design-note.md a
 
 Deliverables: your completed starter crate passing every gate, one extra boundary test, docs/review-record.md and docs/verification-record.md.
 
-### Activity 14: Design and document a reorder feature with AI (Slides 202-206)
+### Activity 14: Design and document a reorder feature with AI (Slides 216-221)
 
 Folder: labs/activity-14-design-capstone. Maps to K5/A5 K4/A4. Suggested time: 30 minutes.
 
@@ -3660,27 +4801,126 @@ Goal and scenario: Capstone: purchasing wants weekly reorder suggestions. You ag
 
 Exact contract: reorder_suggestions(&[StockItem]) -> Vec<Suggestion>. R1 point = usage x lead + safety; R2 items above the point are excluded; R3 order_qty = point + 7 days usage - on_hand, zero quantities excluded; R4 overflowing items are skipped, never wrapped. Output sorted by SKU.
 
+#### Learn the concepts: Activity 14
+
+This activity uses designing with types (newtypes), requirement-named tests and design trade-offs. Run the sample scripts in labs/activity-14-design-capstone/samples/, predicting the output first, then use the Learn Rust prompts with your AI assistant.
+
+Sample samples/01_design_with_types.rs. Run: rustc --edition 2021 01_design_with_types.rs && ./01_design_with_types
+
+```rust
+// Sample: newtypes make invalid values hard to create.
+struct Units(u32);
+
+struct Sku(String);
+
+impl Sku {
+    fn parse(text: &str) -> Option<Sku> {
+        let valid = text.len() == 8 && text.as_bytes()[3] == b'-';
+        valid.then(|| Sku(text.to_string()))
+    }
+}
+
+fn order(sku: &Sku, qty: Units) -> String {
+    format!("order {} x {}", qty.0, sku.0)
+}
+
+fn main() {
+    match Sku::parse("ABC-0001") {
+        Some(sku) => println!("{}", order(&sku, Units(90))),
+        None => println!("invalid SKU"),
+    }
+    println!("bad SKU accepted? {}", Sku::parse("bad").is_some());
+}
+```
+
+Expected output:
+
+```text
+order 90 x ABC-0001
+bad SKU accepted? false
+```
+
+Sample samples/02_trace_with_tests.rs. Run: rustc --edition 2021 --test 02_trace_with_tests.rs && ./02_trace_with_tests
+
+```rust
+// Sample: tests named after requirements form a living trace matrix.
+/// R1: point = usage x lead + safety. R2: above the point, no order.
+/// R3: order up to point + 7 days of usage. R4: overflow gives None.
+pub fn suggest(
+    on_hand: u32,
+    usage: u32,
+    lead: u32,
+    safety: u32,
+) -> Option<u32> {
+    let point = usage.checked_mul(lead)?.checked_add(safety)?;
+    if on_hand > point {
+        return None;
+    }
+    point
+        .checked_add(usage.checked_mul(7)?)?
+        .checked_sub(on_hand)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn r1_r3_below_point_orders_up_to_target() {
+        assert_eq!(suggest(50, 10, 5, 20), Some(90));
+    }
+
+    #[test]
+    fn r2_above_point_no_order() {
+        assert_eq!(suggest(71, 10, 5, 20), None);
+    }
+
+    #[test]
+    fn r4_overflow_is_none() {
+        assert_eq!(suggest(0, u32::MAX, 2, 0), None);
+    }
+}
+```
+
+Expected output:
+
+```text
+test result: ok. 3 passed
+```
+
+Learn Rust prompt, Explain it simply: I am learning Rust. Explain designing with types (newtypes), requirement-named tests and design trade-offs to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+Learn Rust prompt, Walk me through the sample: Here is samples/01_design_with_types.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+Learn Rust prompt, Quiz me: Quiz me on designing with types (newtypes), requirement-named tests and design trade-offs with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+Learn Rust prompt, Compare with what I know: I know some Python or JavaScript. In a small table, compare how Rust handles software design and traceability with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+Learn more: Rust Book: Test Organization (https://doc.rust-lang.org/book/ch11-03-test-organization.html); Rust API Guidelines: Documentation (https://rust-lang.github.io/api-guidelines/documentation.html)
+
 #### Step-by-step: Activity 14
 
 1. Read the specification. Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 
 2. Open the activity in VS Code. Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
 
-3. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed and 1 doctest; docs/design.md traces R1-R4 to named tests.)
+3. Learn the concept first. Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain designing with types (newtypes), requirement-named tests and design trade-offs. The Learn more links point to the matching Rust Book and tutorial pages.
 
-4. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+4. Run the reference solution. In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 6 passed and 1 doctest; docs/design.md traces R1-R4 to named tests.)
 
-5. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+5. Run the starter and read the failures. Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
 
-6. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+6. Plan with the AI assistant. Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
 
-7. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+7. Vibe-code the implementation. Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
 
-8. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo doc --no-deps ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+8. Test until green. Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
 
-9. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add R5: cap any single order at 1,000 units; update the code, docs, trace table and tests together.
+9. Apply the quality gates. Run every gate from the starter folder: cargo test ; cargo doc --no-deps ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
 
-10. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+10. Add your own boundary test. Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add R5: cap any single order at 1,000 units; update the code, docs, trace table and tests together.
+
+11. Record the evidence. Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
 
 #### Commands: Activity 14
 
@@ -3701,7 +4941,7 @@ Generate with AI: Implement "Design and document a reorder feature with AI" in s
 
 Repair from evidence: Here is my exact cargo output: <paste the first error or failing test>. Explain the cause in plain English, propose the smallest fix that keeps the specification, and add one regression test. Do not change expected values in existing tests.
 
-The same prompts are in labs/activity-14-design-capstone/PROMPTS.md and Vibe-Coding-Prompts.pdf.
+The same prompts, the Learn Rust prompts and the sample scripts are in labs/activity-14-design-capstone/PROMPTS.md and Vibe-Coding-Prompts.pdf.
 
 #### Reference solution: Activity 14
 
@@ -3930,5 +5170,23 @@ Rust API Guidelines (documentation and naming): https://rust-lang.github.io/api-
 Serde data model and derive: https://serde.rs/
 
 crates.io registry (serde, serde_json): https://crates.io/
+
+Rust official learning hub (the Book, Rustlings, Rust by Example): https://rust-lang.org/learn/
+
+W3Schools Rust tutorial: https://www.w3schools.com/rust/
+
+W3Schools: Get Started with Rust: https://www.w3schools.com/rust/rust_getstarted.php
+
+Programiz: Learn Rust: https://www.programiz.com/rust
+
+IONOS Digital Guide: Rust tutorial: https://www.ionos.com/digitalguide/websites/web-development/rust-tutorial/
+
+JetBrains: Getting Started with Rust: https://lp.jetbrains.com/getting-started-with-rust/
+
+OneCompiler: Rust tutorial (runs in the browser): https://onecompiler.com/tutorials/rust
+
+It's FOSS: Rust programming tutorial series: https://itsfoss.com/rust-tutorials/
+
+r/rust community thread: "Rust tutorial that actually teaches Rust": https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/
 
 The workbench illustration is a course graphic that reproduces Activity 1 code and its real test result.

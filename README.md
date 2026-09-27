@@ -10,7 +10,7 @@ Build reliable Rust applications with an AI coding assistant, using the compiler
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-ai-vibe-coding-with-rust.html) |
 | Skills framework | Software Design, ICT-DES-3005-1.1 |
 | Funding | Up to 70% SkillsFuture funding for eligible learners. Eligibility and terms apply. |
-| Courseware | Version 3.0 |
+| Courseware | Version 3.1 |
 
 ## About the course
 
@@ -36,7 +36,12 @@ All 14 activities build parts of **StockPilot**, a stock service for a small ele
 
 ## Activities
 
-Each activity folder contains a `starter/` crate to complete, a `solution/` crate for comparison, data files, the vibe-coding prompts (`PROMPTS.md` and `Vibe-Coding-Prompts.pdf`) and review/verification record templates. Start with the [activities index](labs/README.md).
+Each activity folder contains:
+
+- `samples/`: two small, runnable Rust sample scripts that teach the activity's concepts, with their expected output
+- `starter/`: the Cargo crate you complete, and `solution/`: the reference crate for comparison
+- `Vibe-Coding-Prompts.pdf` and `PROMPTS.md`: **Learn Rust** prompts (explain, walk-through, quiz, compare) and **Build with AI** prompts, plus the sample scripts and learn-more links
+- data files and review/verification record templates Start with the [activities index](labs/README.md).
 
 | # | Activity | Maps to |
 |---|---|---|
@@ -55,7 +60,7 @@ Each activity folder contains a `starter/` crate to complete, a `solution/` crat
 | 13 | [Document an API with rustdoc and doctests](labs/activity-13-rustdoc-doctests/) | K5/A5 |
 | 14 | [Design and document a reorder feature with AI](labs/activity-14-design-capstone/) | K5/A5 K4/A4 |
 
-Every solution crate passes `cargo test` (including doctests), `cargo clippy --all-targets -- -D warnings` and `cargo fmt --check` on Rust 1.93.1. Every starter compiles and fails in the intended way until you complete it.
+Every solution crate passes `cargo test` (including doctests), `cargo clippy --all-targets -- -D warnings` and `cargo fmt --check` on Rust 1.93.1. Every starter compiles and fails in the intended way until you complete it. All 28 sample scripts compile without warnings and produce exactly the output documented beside them.
 
 ## Getting started
 
@@ -72,13 +77,25 @@ cargo test
 
 Use Visual Studio Code with the rust-analyzer extension and any AI coding assistant. No API key or paid account is needed. Detailed step-by-step instructions for every activity are in the Learner Guide and each activity README.
 
+## Learn Rust: recommended resources
+
+- [Rust official learning hub (the Book, Rustlings, Rust by Example)](https://rust-lang.org/learn/)
+- [W3Schools Rust tutorial](https://www.w3schools.com/rust/)
+- [W3Schools: Get Started with Rust](https://www.w3schools.com/rust/rust_getstarted.php)
+- [Programiz: Learn Rust](https://www.programiz.com/rust)
+- [IONOS Digital Guide: Rust tutorial](https://www.ionos.com/digitalguide/websites/web-development/rust-tutorial/)
+- [JetBrains: Getting Started with Rust](https://lp.jetbrains.com/getting-started-with-rust/)
+- [OneCompiler: Rust tutorial (runs in the browser)](https://onecompiler.com/tutorials/rust)
+- [It's FOSS: Rust programming tutorial series](https://itsfoss.com/rust-tutorials/)
+- [r/rust community thread: "Rust tutorial that actually teaches Rust"](https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/)
+
 ## Courseware package
 
 | Item | Files |
 |---|---|
-| Slide deck | [PowerPoint](courseware/AI-Vibe-Coding-with-Rust-v3.0.pptx) · [PDF](courseware/AI-Vibe-Coding-with-Rust-v3.0.pdf) |
-| Learner Guide | [Word](courseware/LG-AI-Vibe-Coding-with-Rust-v3.0.docx) · [PDF](courseware/LG-AI-Vibe-Coding-with-Rust-v3.0.pdf) · [Markdown](LG-AI-Vibe-Coding-with-Rust-v3.0.md) |
-| Lesson Plan | [Word](courseware/LP-AI-Vibe-Coding-with-Rust-v3.0.docx) · [PDF](courseware/LP-AI-Vibe-Coding-with-Rust-v3.0.pdf) |
+| Slide deck | [PowerPoint](courseware/AI-Vibe-Coding-with-Rust-v3.1.pptx) · [PDF](courseware/AI-Vibe-Coding-with-Rust-v3.1.pdf) |
+| Learner Guide | [Word](courseware/LG-AI-Vibe-Coding-with-Rust-v3.1.docx) · [PDF](courseware/LG-AI-Vibe-Coding-with-Rust-v3.1.pdf) · [Markdown](LG-AI-Vibe-Coding-with-Rust-v3.1.md) |
+| Lesson Plan | [Word](courseware/LP-AI-Vibe-Coding-with-Rust-v3.1.docx) · [PDF](courseware/LP-AI-Vibe-Coding-with-Rust-v3.1.pdf) |
 | Activities | [labs/](labs/) |
 
 ## Distribution boundary

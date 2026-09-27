@@ -18,15 +18,15 @@ pub struct Item {
 
 /// Parses a JSON array of items; missing or mistyped fields are errors.
 pub fn load_items(json: &str) -> Result<Vec<Item>, serde_json::Error> {
-    todo!("implement load_items (see README step 6)")
+    todo!("implement load_items (see README, step 7)")
 }
 
 /// Serialises items as pretty-printed JSON.
 pub fn to_json(items: &[Item]) -> Result<String, serde_json::Error> {
-    todo!("implement to_json (see README step 6)")
+    todo!("implement to_json (see README, step 7)")
 }
 
 /// Total stock value in cents, or `None` on overflow.
 pub fn stock_value(items: &[Item]) -> Option<u64> {
-    todo!("implement stock_value (see README step 6)")
+    todo!("implement stock_value (see README, step 7)")
 }

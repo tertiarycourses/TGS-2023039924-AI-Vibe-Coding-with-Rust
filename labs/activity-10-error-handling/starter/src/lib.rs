@@ -58,10 +58,10 @@ fn number<T: std::str::FromStr>(
 
 /// Parses `sku,qty,unit_cents`; surrounding spaces are ignored.
 pub fn parse_record(line: &str) -> Result<Record, ParseError> {
-    todo!("implement parse_record (see README step 6)")
+    todo!("implement parse_record (see README, step 7)")
 }
 
 /// Parses every line, keeping valid records and numbered errors.
 pub fn parse_all(text: &str) -> (Vec<Record>, Vec<(usize, ParseError)>) {
-    todo!("implement parse_all (see README step 6)")
+    todo!("implement parse_all (see README, step 7)")
 }

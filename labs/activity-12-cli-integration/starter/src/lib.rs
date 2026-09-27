@@ -7,5 +7,5 @@ fn money(cents: u64) -> String {
 
 /// Builds the three-line stock report from CSV text.
 pub fn run(csv: &str, threshold: u32) -> Result<String, String> {
-    todo!("implement run (see README step 6)")
+    todo!("implement run (see README, step 7)")
 }

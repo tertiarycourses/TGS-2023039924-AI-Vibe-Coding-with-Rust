@@ -55,15 +55,15 @@ impl Priced for Service {
 
 /// Totals lines of one type (static dispatch).
 pub fn order_total<T: Priced>(lines: &[T]) -> Option<u64> {
-    todo!("implement order_total (see README step 6)")
+    todo!("implement order_total (see README, step 7)")
 }
 
 /// Totals lines of different types (dynamic dispatch).
 pub fn mixed_total(lines: &[&dyn Priced]) -> Option<u64> {
-    todo!("implement mixed_total (see README step 6)")
+    todo!("implement mixed_total (see README, step 7)")
 }
 
 /// Names of products priced at or above `min_cents`, in input order.
 pub fn names_at_least(products: &[Product], min_cents: u64) -> Vec<&str> {
-    todo!("implement names_at_least (see README step 6)")
+    todo!("implement names_at_least (see README, step 7)")
 }

@@ -31,3 +31,15 @@ rustc --version && cargo --version
 ```
 
 Install Visual Studio Code and the rust-analyzer extension. Any AI coding assistant can be used; no API key is needed for the activities.
+
+## Learn Rust: recommended resources
+
+- [Rust official learning hub (the Book, Rustlings, Rust by Example)](https://rust-lang.org/learn/)
+- [W3Schools Rust tutorial](https://www.w3schools.com/rust/)
+- [W3Schools: Get Started with Rust](https://www.w3schools.com/rust/rust_getstarted.php)
+- [Programiz: Learn Rust](https://www.programiz.com/rust)
+- [IONOS Digital Guide: Rust tutorial](https://www.ionos.com/digitalguide/websites/web-development/rust-tutorial/)
+- [JetBrains: Getting Started with Rust](https://lp.jetbrains.com/getting-started-with-rust/)
+- [OneCompiler: Rust tutorial (runs in the browser)](https://onecompiler.com/tutorials/rust)
+- [It's FOSS: Rust programming tutorial series](https://itsfoss.com/rust-tutorials/)
+- [r/rust community thread: "Rust tutorial that actually teaches Rust"](https://www.reddit.com/r/rust/comments/15b9rl5/rust_tutorial_that_actually_teaches_rust/)

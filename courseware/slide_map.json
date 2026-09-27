@@ -1,34 +1,34 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "topics": {
     "1": {
       "title": "Rust Programming Fundamentals and Software Components",
-      "start": 16,
-      "end": 55,
+      "start": 17,
+      "end": 59,
       "mapping": "K1/A1"
     },
     "2": {
       "title": "AI Vibe Coding for Rust Application Development",
-      "start": 56,
-      "end": 95,
+      "start": 60,
+      "end": 102,
       "mapping": "K2/A2"
     },
     "3": {
       "title": "Rust Programming Controls, Functions and Features",
-      "start": 96,
-      "end": 136,
+      "start": 103,
+      "end": 146,
       "mapping": "K3/A3"
     },
     "4": {
       "title": "Testing, Debugging and Integrating Rust Components",
-      "start": 137,
-      "end": 174,
+      "start": 147,
+      "end": 187,
       "mapping": "K4/A4"
     },
     "5": {
       "title": "AI-Assisted Rust Software Design and Documentation",
-      "start": 175,
-      "end": 207,
+      "start": 188,
+      "end": 222,
       "mapping": "K5/A5"
     }
   },
@@ -36,342 +36,342 @@
     "1": {
       "title": "Turn a specification into a Rust function",
       "folder": "activity-01-line-total",
-      "start": 41,
-      "end": 45,
+      "start": 42,
+      "end": 47,
       "topic": "1",
       "mapping": "K1/A1"
     },
     "2": {
       "title": "Validate a product code with strings",
       "folder": "activity-02-sku-validation",
-      "start": 46,
-      "end": 50,
+      "start": 48,
+      "end": 53,
       "topic": "1",
       "mapping": "K1/A1"
     },
     "3": {
       "title": "Share inventory records with ownership and borrowing",
       "folder": "activity-03-ownership-borrowing",
-      "start": 51,
-      "end": 55,
+      "start": 54,
+      "end": 59,
       "topic": "1",
       "mapping": "K1/A1 K3/A3"
     },
     "4": {
       "title": "Vibe-code a command parser",
       "folder": "activity-04-cli-commands",
-      "start": 81,
-      "end": 85,
+      "start": 85,
+      "end": 90,
       "topic": "2",
       "mapping": "K2/A2"
     },
     "5": {
       "title": "Organise a crate into modules",
       "folder": "activity-05-modules-visibility",
-      "start": 86,
-      "end": 90,
+      "start": 91,
+      "end": 96,
       "topic": "2",
       "mapping": "K2/A2"
     },
     "6": {
       "title": "Load inventory JSON with Cargo dependencies",
       "folder": "activity-06-cargo-serde-json",
-      "start": 91,
-      "end": 95,
+      "start": 97,
+      "end": 102,
       "topic": "2",
       "mapping": "K2/A2 K4/A4"
     },
     "7": {
       "title": "Apply stock movements with enums and match",
       "folder": "activity-07-match-control-flow",
-      "start": 121,
-      "end": 125,
+      "start": 128,
+      "end": 133,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "8": {
       "title": "Track stock in a HashMap",
       "folder": "activity-08-hashmap-inventory",
-      "start": 126,
-      "end": 130,
+      "start": 134,
+      "end": 139,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "9": {
       "title": "Price mixed order lines with traits and iterators",
       "folder": "activity-09-traits-iterators",
-      "start": 131,
-      "end": 135,
+      "start": 140,
+      "end": 145,
       "topic": "3",
       "mapping": "K3/A3"
     },
     "10": {
       "title": "Parse CSV records with Result and custom errors",
       "folder": "activity-10-error-handling",
-      "start": 159,
-      "end": 163,
+      "start": 169,
+      "end": 174,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "11": {
       "title": "Debug a failing integration with tests",
       "folder": "activity-11-debug-integration",
-      "start": 164,
-      "end": 168,
+      "start": 175,
+      "end": 180,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "12": {
       "title": "Integrate components into a tested command-line tool",
       "folder": "activity-12-cli-integration",
-      "start": 169,
-      "end": 173,
+      "start": 181,
+      "end": 186,
       "topic": "4",
       "mapping": "K4/A4"
     },
     "13": {
       "title": "Document an API with rustdoc and doctests",
       "folder": "activity-13-rustdoc-doctests",
-      "start": 197,
-      "end": 201,
+      "start": 210,
+      "end": 215,
       "topic": "5",
       "mapping": "K5/A5"
     },
     "14": {
       "title": "Design and document a reorder feature with AI",
       "folder": "activity-14-design-capstone",
-      "start": 202,
-      "end": 206,
+      "start": 216,
+      "end": 221,
       "topic": "5",
       "mapping": "K5/A5 K4/A4"
     }
   },
   "concepts": {
     "A specification becomes a component contract": {
-      "start": 17,
-      "end": 19,
+      "start": 18,
+      "end": 20,
       "topic": "1",
       "anchor": "MODEL"
     },
     "The Rust toolchain: rustup, cargo and rustc": {
-      "start": 20,
-      "end": 22,
+      "start": 21,
+      "end": 23,
       "topic": "1",
       "anchor": "CONFIG"
     },
     "Anatomy of a Cargo package": {
-      "start": 23,
-      "end": 25,
+      "start": 24,
+      "end": 26,
       "topic": "1",
       "anchor": "ARCH"
     },
     "Variables are immutable by default": {
-      "start": 26,
-      "end": 28,
+      "start": 27,
+      "end": 29,
       "topic": "1",
       "anchor": "CODE"
     },
     "Choose integer types deliberately": {
-      "start": 29,
-      "end": 31,
+      "start": 30,
+      "end": 32,
       "topic": "1",
       "anchor": "FORMULA"
     },
     "Functions: the signature is the contract": {
-      "start": 32,
-      "end": 34,
+      "start": 33,
+      "end": 35,
       "topic": "1",
       "anchor": "CODE"
     },
     "String and &str: owned text and borrowed text": {
-      "start": 35,
-      "end": 37,
+      "start": 36,
+      "end": 38,
       "topic": "1",
       "anchor": "CODE"
     },
     "Ownership moves; borrowing lends": {
-      "start": 38,
-      "end": 40,
+      "start": 39,
+      "end": 41,
       "topic": "1",
       "anchor": "CODE"
     },
     "The vibe-coding loop for Rust": {
-      "start": 57,
-      "end": 59,
+      "start": 61,
+      "end": 63,
       "topic": "2",
       "anchor": "MODEL"
     },
     "Write a bounded prompt": {
-      "start": 60,
-      "end": 62,
+      "start": 64,
+      "end": 66,
       "topic": "2",
       "anchor": "CONFIG"
     },
     "The compiler is your first reviewer": {
-      "start": 63,
-      "end": 65,
+      "start": 67,
+      "end": 69,
       "topic": "2",
       "anchor": "EVIDENCE"
     },
     "Review AI-generated Rust before accepting it": {
-      "start": 66,
-      "end": 68,
+      "start": 70,
+      "end": 72,
       "topic": "2",
       "anchor": "EVIDENCE"
     },
     "Modules and visibility organise a crate": {
-      "start": 69,
-      "end": 71,
+      "start": 73,
+      "end": 75,
       "topic": "2",
       "anchor": "ARCH"
     },
     "Cargo dependencies and Cargo.lock": {
-      "start": 72,
-      "end": 74,
+      "start": 76,
+      "end": 78,
       "topic": "2",
       "anchor": "CONFIG"
     },
     "fmt and clippy encode team practice": {
-      "start": 75,
-      "end": 77,
+      "start": 79,
+      "end": 81,
       "topic": "2",
       "anchor": "CONFIG"
     },
     "Set up VS Code for Rust vibe coding": {
-      "start": 78,
-      "end": 80,
+      "start": 82,
+      "end": 84,
       "topic": "2",
       "anchor": "UI"
     },
     "if and match are expressions": {
-      "start": 97,
-      "end": 99,
+      "start": 104,
+      "end": 106,
       "topic": "3",
       "anchor": "CODE"
     },
     "enum + match model every case": {
-      "start": 100,
-      "end": 102,
+      "start": 107,
+      "end": 109,
       "topic": "3",
       "anchor": "CODE"
     },
     "Loops: for, while and loop": {
-      "start": 103,
-      "end": 105,
+      "start": 110,
+      "end": 112,
       "topic": "3",
       "anchor": "CODE"
     },
     "Structs and impl blocks": {
-      "start": 106,
-      "end": 108,
+      "start": 113,
+      "end": 115,
       "topic": "3",
       "anchor": "CODE"
     },
     "Collections: Vec and HashMap": {
-      "start": 109,
-      "end": 111,
+      "start": 116,
+      "end": 118,
       "topic": "3",
       "anchor": "CODE"
     },
     "Traits and generics share behaviour": {
-      "start": 112,
-      "end": 114,
+      "start": 119,
+      "end": 121,
       "topic": "3",
       "anchor": "CODE"
     },
     "Closures and iterator chains": {
-      "start": 115,
-      "end": 117,
+      "start": 122,
+      "end": 124,
       "topic": "3",
       "anchor": "CODE"
     },
     "Option and Result are control features": {
-      "start": 118,
-      "end": 120,
+      "start": 125,
+      "end": 127,
       "topic": "3",
       "anchor": "CODE"
     },
     "Unit tests live beside the code": {
-      "start": 138,
-      "end": 140,
+      "start": 148,
+      "end": 150,
       "topic": "4",
       "anchor": "CODE"
     },
     "Integration tests check components together": {
-      "start": 141,
-      "end": 143,
+      "start": 151,
+      "end": 153,
       "topic": "4",
       "anchor": "ARCH"
     },
     "Custom errors and the ? operator": {
-      "start": 144,
-      "end": 146,
+      "start": 154,
+      "end": 156,
       "topic": "4",
       "anchor": "CODE"
     },
     "Read a failing test like a detective": {
-      "start": 147,
-      "end": 149,
+      "start": 157,
+      "end": 159,
       "topic": "4",
       "anchor": "EVIDENCE"
     },
     "Debug with dbg!, focused tests and AI": {
-      "start": 150,
-      "end": 152,
+      "start": 160,
+      "end": 162,
       "topic": "4",
       "anchor": "EVIDENCE"
     },
     "Interoperability: arguments, files, exit codes": {
-      "start": 153,
-      "end": 155,
+      "start": 163,
+      "end": 165,
       "topic": "4",
       "anchor": "ARCH"
     },
     "Serde: typed data at the boundary": {
-      "start": 156,
-      "end": 158,
+      "start": 166,
+      "end": 168,
       "topic": "4",
       "anchor": "CODE"
     },
     "Doc comments become documentation": {
-      "start": 176,
-      "end": 178,
+      "start": 189,
+      "end": 191,
       "topic": "5",
       "anchor": "CODE"
     },
     "Doctests keep examples honest": {
-      "start": 179,
-      "end": 181,
+      "start": 192,
+      "end": 194,
       "topic": "5",
       "anchor": "EVIDENCE"
     },
     "Trace requirements to code and tests": {
-      "start": 182,
-      "end": 184,
+      "start": 195,
+      "end": 197,
       "topic": "5",
       "anchor": "MODEL"
     },
     "Architecture and module maps": {
-      "start": 185,
-      "end": 187,
+      "start": 198,
+      "end": 200,
       "topic": "5",
       "anchor": "ARCH"
     },
     "Record design decisions": {
-      "start": 188,
-      "end": 190,
+      "start": 201,
+      "end": 203,
       "topic": "5",
       "anchor": "MODEL"
     },
     "AI-assisted documentation, human-verified": {
-      "start": 191,
-      "end": 193,
+      "start": 204,
+      "end": 206,
       "topic": "5",
       "anchor": "EVIDENCE"
     },
     "Hand over: README and maintenance notes": {
-      "start": 194,
-      "end": 196,
+      "start": 207,
+      "end": 209,
       "topic": "5",
       "anchor": "UI"
     }
@@ -379,8 +379,8 @@
   "admin": {
     "portal": [
       13,
-      210
+      225
     ],
-    "practice_exam": 209
+    "practice_exam": 224
   }
 }

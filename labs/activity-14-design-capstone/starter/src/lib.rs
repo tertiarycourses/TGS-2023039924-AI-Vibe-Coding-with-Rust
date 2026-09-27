@@ -55,5 +55,5 @@ pub const REVIEW_DAYS: u32 = 7;
 /// assert_eq!(reorder_suggestions(&[item])[0].order_qty, 90);
 /// ```
 pub fn reorder_suggestions(items: &[StockItem]) -> Vec<Suggestion> {
-    todo!("implement reorder_suggestions (see README step 6)")
+    todo!("implement reorder_suggestions (see README, step 7)")
 }

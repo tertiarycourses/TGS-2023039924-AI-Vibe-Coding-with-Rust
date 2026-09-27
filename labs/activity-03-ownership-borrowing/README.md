@@ -1,6 +1,6 @@
 # Activity 3: Share inventory records with ownership and borrowing
 
-AI Vibe Coding with Rust (TGS-2023039924) - version 3.0 - K1/A1 K3/A3 - about 25 minutes.
+AI Vibe Coding with Rust (TGS-2023039924) - version 3.1 - K1/A1 K3/A3 - about 25 minutes.
 
 ## Goal and scenario
 
@@ -20,21 +20,51 @@ Rust stable installed with rustup (includes cargo, rustfmt and clippy), Visual S
 |---|---|
 | `starter/` | The crate you complete. Start here. |
 | `solution/` | Reference crate: runs green; compare only after your own attempt. |
-| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | The three vibe-coding prompts for this activity. |
+| `samples/` | Small runnable Rust sample scripts that teach the concepts of this activity. |
+| `PROMPTS.md` / `Vibe-Coding-Prompts.pdf` | Learn Rust prompts, vibe-coding prompts, samples and learn-more links. |
 | `docs/` | Review and verification records you complete. |
 
 ## Step-by-step
 
 1. **Read the specification.** Read the Goal and Exact contract sections below and the files in data/ (if any). Write down each input, its type and valid range, the failure behaviour and the boundary values before you open any code.
 2. **Open the activity in VS Code.** Open this activity folder in Visual Studio Code with the rust-analyzer extension enabled. Confirm the toolchain with rustc --version and cargo --version in the integrated terminal.
-3. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the overflow test proves the item is unchanged.)
-4. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
-5. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
-6. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
-7. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
-8. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
-9. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add rename(item: &mut Item, new_name: &str) and a test proving the SKU is unchanged.
-10. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+3. **Learn the concept first.** Open samples/ and run each sample script (commands in samples/README.md). Predict the output before you run it. Then use the "Learn Rust" prompts in PROMPTS.md with your AI assistant to explain ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut). The Learn more links point to the matching Rust Book and tutorial pages.
+4. **Run the reference solution.** In the terminal run: cd solution && cargo test. Confirm the result line shows every test passing. This proves your toolchain works and shows the target behaviour. (cargo test reports 5 passed; the overflow test proves the item is unchanged.)
+5. **Run the starter and read the failures.** Run: cd ../starter && cargo test. Every test that calls an unfinished function fails with "not yet implemented" from todo!(). This is expected: the tests are the specification you will implement against.
+6. **Plan with the AI assistant.** Paste the "Plan before code" prompt from PROMPTS.md into your AI coding assistant (for example GitHub Copilot Chat, Claude or ChatGPT). Compare its edge cases with your own list from step 1 and record agreements and disagreements in docs/review-record.md.
+7. **Vibe-code the implementation.** Use the "Generate with AI" prompt to generate code for starter/src/lib.rs. Review the proposal before accepting it: public signatures unchanged, no unsafe, no unwrap() or expect() on input data, no new crates, and every line explained. Reject or edit anything you cannot justify.
+8. **Test until green.** Run cargo test after each accepted change. If a test fails or the code does not compile, use the "Repair from evidence" prompt with the exact cargo output. Never edit expected values in tests to make them pass.
+9. **Apply the quality gates.** Run every gate from the starter folder: cargo test ; cargo clippy --all-targets -- -D warnings ; cargo fmt --check. Fix each clippy warning and formatting difference; these are the organisation's coding standards.
+10. **Add your own boundary test.** Predict one more boundary case from the specification and add it to the test file in starter/tests/. Run it against both starter and solution. Stretch: Add rename(item: &mut Item, new_name: &str) and a test proving the SKU is unchanged.
+11. **Record the evidence.** Complete docs/verification-record.md with the commands you ran, the exact result lines (for example "test result: ok. 5 passed"), the AI proposals you accepted or rejected and why. Compare your code with solution/ only after your own tests pass.
+
+## Learn the concepts
+
+This activity uses ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut). Run the samples, then ask your AI assistant the Learn Rust prompts below.
+
+| Sample | Run it | Expected output |
+|---|---|---|
+| [`01_move_and_clone.rs`](samples/01_move_and_clone.rs) | `rustc --edition 2021 01_move_and_clone.rs && ./01_move_and_clone` | consumed 2 items; the clone still has ["cable", "charger"]<br>n = 5, m = 5 |
+| [`02_borrowing.rs`](samples/02_borrowing.rs) | `rustc --edition 2021 02_borrowing.rs && ./02_borrowing` | total before = 12<br>stock after  = [5, 10, 7]<br>total after  = 22 |
+
+### Learn Rust prompts
+
+**Explain it simply.** I am learning Rust. Explain ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut) to a beginner in plain English. Use a short example from a small shop's stock system, keep the code under 20 lines, show its output, and point out one mistake beginners often make.
+
+**Walk me through the sample.** Here is samples/01_move_and_clone.rs from my course. Walk through it line by line. Before I run it, ask me to predict the output. Then suggest one small change I can make to experiment, and tell me what should happen.
+
+**Quiz me.** Quiz me on ownership, moves, Copy types, clone, shared borrows (&) and mutable borrows (&mut) with 5 questions, one at a time. Wait for my answer each time and explain why it is right or wrong. Include one question where I predict the output or the compiler error of a short Rust snippet.
+
+**Compare with what I know.** I know some Python or JavaScript. In a small table, compare how Rust handles ownership and borrowing (memory management) with Python and JavaScript. Then show one Rust example and explain what the Rust compiler checks for me that the others do not.
+
+### Learn more
+
+- [Rust Book: What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+- [Rust Book: References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+- [W3Schools: Rust Ownership](https://www.w3schools.com/rust/rust_ownership.php)
+- [Programiz: Rust Ownership](https://www.programiz.com/rust/ownership)
+- [Programiz: References and Borrowing](https://www.programiz.com/rust/references-and-borrowing)
+
 
 ## Commands
 
