@@ -9,7 +9,7 @@ Build reliable Rust applications with an AI coding assistant, using the compiler
 | Duration | 2 days, 16 hours (14 training hours + 2 assessment hours), 9:30 AM - 6:30 PM |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-ai-vibe-coding-with-rust.html) |
 | Skills framework | Software Design, ICT-DES-3005-1.1 |
-| Funding | Up to 70% SkillsFuture funding for eligible learners. Eligibility and terms apply. |
+| Funding | Up to 50% SkillsFuture course fee funding, or up to 70% for eligible SME employees and Singapore Citizens aged 40 and above. Eligibility and terms apply. |
 | Courseware | Version 3.1 |
 
 ## About the course
